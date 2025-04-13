@@ -1,0 +1,12 @@
+[
+  {
+    "name": "Cadia",
+    "description": "Fortress world defending the Cadian Gate, now lying in ruins.",
+    "status": "Destroyed"
+  },
+  {
+    "name": "Armageddon",
+    "description": "Desolate homeworld ravaged by war and radiation.",
+    "status": "Contested"
+  }
+]
