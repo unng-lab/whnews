@@ -1,52 +1,52 @@
 [
   {
-    "name": "Roboute Guilliman",
-    "description": "Primarch of the Ultramarines and Lord Commander of the Imperium.",
-    "image": "/images/leader-1.png"
-  },
-  {
-    "name": "Abaddon the Despoiler",
-    "description": "Warmaster of Chaos and leader of the Black Legion.",
-    "image": "/images/leader-2.png"
-  },
-  {
-    "name": "Commander Farsight",
-    "description": "Renegade Tau commander wielding the Dawn Blade.",
-    "image": "/images/leader-3.png"
-  },
-  {
-    "name": "Saint Celestine",
-    "description": "Living saint of the Adepta Sororitas with miraculous powers.",
-    "image": "/images/leader-4.png"
-  },
-  {
-    "name": "Ghazghkull Mag Uruk Thraka",
-    "description": "The most powerful Ork Warlord in the galaxy.",
-    "image": "/images/leader-5.png"
-  },
-  {
-    "name": "Trazyn the Infinite",
-    "description": "A Necron Overlord and obsessive collector of rare artifacts.",
-    "image": "/images/leader-6.png"
-  },
-  {
-    "name": "Magnus the Red",
-    "description": "Primarch of the Thousand Sons and powerful sorcerer of Tzeentch.",
-    "image": "/images/leader-7.png"
-  },
-  {
-    "name": "Sanguinius",
-    "description": "Angel-winged Primarch of the Blood Angels, slain at Terra.",
+    "name": "Магос Биологис Си Цзинпий",
+    "description": "Техножрец, создавший тотальную систему слежки с помощью \"Драконовых Спутников\". Его народ — генетически модифицированные сервиторы, лишённые индивидуальности. Уничтожил всех псайкеров на своих планетах, чтобы избежать угрозы Хаоса. Его цель — кибернетическое \"совершенство\", где каждая мысль гражданина принадлежит государству.",
     "image": "/images/leader-8.png"
   },
   {
-    "name": "Inquisitor Eisenhorn",
-    "description": "Imperial Inquisitor known for walking the edge of heresy.",
+    "name": "Владар Морозов Хельсир III",
+    "description": "Лорд-Комиссар Ледяных Шахт Рус-Белта. Носящий Мантию из Шкур Морозных Волков. Подавил 888 восстаний Геностеллеров. Имеет кибер-медведя с многоствольным автоканоном.",
+    "image": "/images/leader-2.png"
+  },
+  {
+    "name": "Донатус Трампус Оратор Голд-Терра",
+    "description": "Мега-Демагог Золотых Башен Либертас. Вещает через 1000 вукс-каналов. Его цитадель-пирамида покрыта суперобелисками из чистого аурамита. Подозревается в поклонении Слаанеш.",
     "image": "/images/leader-1.png"
   },
   {
-    "name": "Mortarion",
-    "description": "Daemon Primarch of the Death Guard, champion of Nurgle.",
-    "image": "/images/leader-1.png"
+    "name": "Ангелия Меркель-Прайм Фабрикатор Европус",
+    "description": "Фабрикатор-Генерал Европус-Кластера. Её механические щупальца контролируют 88% производства Лэндкраулеров. Говорят, её разум слился с запретным ИИ \"Reichsmaschine\".",
+    "image": "/images/leader-9.png"
+  },
+  {
+    "name": "Мехмет Соламан Прометеум-Шейх",
+    "description": "Верховный Шейх Прометеума. Контролирует Реки Жидкой Веры. Его нефтяные крейсеры патрулируют Пустыню Скверны. Имеет личную армию Джинн-Сервиторов.",
+    "image": "/images/leader-3.png"
+  },
+  {
+    "name": "Нарандро Модиус Агри-Гуру Бхарат",
+    "description": "Агри-Сенсей Бхарат Спирали. Его ритуальные тракторы вспахивают кости еретиков. Создал генетический вирус \"Священная Корова\". Поклоняется Машине-Ганеше.",
+    "image": "/images/leader-4.png"
+  },
+  {
+    "name": "Эммануэль Макрон-Секундус Вино-Еретикус",
+    "description": "Кардинал Вина-Ереси Галлии. Его соборы-винодельни производят эликсир из крови псайкеров. Ведёт \"Розовый Крестовый поход\" против ультраправых культов.",
+    "image": "/images/leader-7.png"
+  },
+  {
+    "name": "Терезия Мэй-Омега Чайная Инквизитор",
+    "description": "Инквизитор Чайного Ордена. Её лимузин-дредноут \"Royaltea\" оснащён кипятильниками пыток. Борется с хаоситами-сепаратистами \"Brexit Cult\".",
+    "image": "/images/leader-12.png"
+  },
+  {
+    "name": "Бенедиктус Нетаньях IX Крестоносец Сион-Прайм",
+    "description": "Верховный Командор Сион-Крепости. Его лазерная стена \"Iron Dome\" сожгла 1000 орковских кораблей. Носит реликвию \"Свитки Терры\". Подозревается в юрис-ереси.",
+    "image": "/images/leader-10.png"
+  },
+  {
+    "name": "Киммундус Изолированное Убежище",
+    "description": "Пророк Изолированного Убежища. Его подземные лаборатории создают вирус \"Священного Послушания\". Имеет 100 клонов-телохранителей. Поклоняется ядерному пламени.",
+    "image": "/images/leader-5.png"
   }
 ]

@@ -1,52 +1,52 @@
 [
   {
-    "name": "Belisarius Cawl",
-    "description": "Archmagos Dominus of Mars and architect of the Primaris project.",
-    "image": "https://via.placeholder.com/400x300?text=Cawl"
+    "name": "Синдзо-Абэддон Самурай Механикус",
+    "description": "Самурай-Технобрат Некронской Границы. Его катана из ворп-стали разрезает реальность. Контролирует 7 священных робо-дзинд. Сражается с Левиафанами Тихого Океана.",
+    "image": "/images/leader-11.png"
   },
   {
-    "name": "Logan Grimnar",
-    "description": "The Great Wolf of the Space Wolves Chapter.",
-    "image": "https://via.placeholder.com/400x300?text=Grimnar"
+    "name": "Халиф Зейд Аль-Прометеум Примус",
+    "description": "Примарх Песчаных Дредноутов. Его дворец-спутник парит над Прометеумными морями. 1000 рабов-сервиторов непрерывно читают Коран-Мекканикус.",
+    "image": "/images/leader-13.png"
   },
   {
-    "name": "Yvraine",
-    "description": "High Priestess of Ynnead and leader of the Ynnari.",
-    "image": "https://via.placeholder.com/400x300?text=Yvraine"
+    "name": "Абд-эль Сисиус Некро-Фараон",
+    "description": "Фараон Некро-Пустыни. Разбудил древних Томб-Культов. Его пирамида-крейсер \"Сфинкс-Этернал\" стреляет лучами ненависти. Война с мутантами Нила.",
+    "image": "/images/leader-14.png"
   },
   {
-    "name": "Darkstrider",
-    "description": "Master Pathfinder of the Tau Empire known for battlefield deception.",
-    "image": "https://via.placeholder.com/400x300?text=Darkstrider"
+    "name": "Реджепиус Эрдоган-Омниссия Босфорская",
+    "description": "Великий Мостовик Босфора. Контролирует 7 космических мостов между секторами. Его мечеть-дредноут \"Айя-София\" несёт вирусные минареты.",
+    "image": "/images/leader-6.png"
   },
   {
-    "name": "Typhus",
-    "description": "Host of the Destroyer Hive and right hand of Mortarion.",
-    "image": "https://via.placeholder.com/400x300?text=Typhus"
+    "name": "Мишель Темер-Бета Джунгли-Рекрутер",
+    "description": "Джунгли-Рекрутер Амазонии. Его гибриды человека и ягуара охотятся за ксенос-диссидентами. Запретил кислород для низших каст.",
+    "image": null
   },
   {
-    "name": "Mephiston",
-    "description": "Chief Librarian of the Blood Angels, once known as the Lord of Death.",
-    "image": "https://via.placeholder.com/400x300?text=Mephiston"
+    "name": "Мун Чжэ-Инквизитор Кибер-Демиург",
+    "description": "Кибер-Демиург Кореи Секундус. Вживил в мозг запрещенные нейро-сутраны. Его фабрики производят 95% имперских голо-идолов. Война с северными некронами.",
+    "image": "/images/leader-15.png"
   },
   {
-    "name": "Szarekh",
-    "description": "Silent King of the Necrons, returned to lead his people.",
-    "image": "https://via.placeholder.com/400x300?text=Szarekh"
+    "name": "Джастиниан Трюдо-Канадский Ледяной Паладин",
+    "description": "Ледяной Паладин Канадской Пустоши. Его кленовые щиты поглощают варп-энергию. Ведёт крестовый поход против мутантов-полярников. Носит мантию из шкур лосей-мутантов.",
+    "image": "/images/leader-20.png"
   },
   {
-    "name": "Cypher",
-    "description": "Mysterious Fallen Angel, hunted by the Imperium and Chaos alike.",
-    "image": "https://via.placeholder.com/400x300?text=Cypher"
+    "name": "Ли Сянь-Лунг Неон-Архитектор",
+    "description": "Архитектор Неон-Сингапура. Его город-спутник сияет как маяк против Тиранидов. Все граждане чипированы нейро-благодатью. Уничтожил 88% псиоников.",
+    "image": "/images/leader-16.png"
   },
   {
-    "name": "Aun'Va",
-    "description": "The Ethereal Supreme of the Tau Empire.",
-    "image": "https://via.placeholder.com/400x300?text=AunVa"
+    "name": "Башар Асад-Гамма Пылающий Пророк",
+    "description": "Пылающий Пророк Сирийской Пустоши. Его огненные проповеди выжигают ересь. Контролирует древние вулканические пушки. Война с культом \"Свободная Сирия\".",
+    "image": "/images/leader-17.png"
   },
   {
-    "name": "Kaldor Draigo",
-    "description": "Supreme Grand Master of the Grey Knights, trapped in the Warp.",
-    "image": "https://via.placeholder.com/400x300?text=Draigo"
+    "name": "Энрик Ньето-Кактусовый Картель-Лорд",
+    "description": "Кактусовый Картель-Лорд. Его нейротоксины вызывают видения Санта-Муэрте. Подземные туннели ведут в царство Геностеллеров. Имеет договор с Демоном Кокаинум.",
+    "image": "/images/leader-18.png"
   }
 ]
