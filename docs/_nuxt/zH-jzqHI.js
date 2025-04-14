@@ -1,0 +1,1 @@
+import{_ as t,t as c,v as n,z as o,$ as s}from"./B3ELnfMC.js";const _={},a={class:"min-h-screen bg-black text-white font-serif"};function r(f,i){const e=s;return n(),c("div",a,[o(e)])}const l=t(_,[["render",r]]);export{l as default};

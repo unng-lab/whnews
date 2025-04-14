@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Roboute Guilliman",
+    "description": "Primarch of the Ultramarines and Lord Commander of the Imperium.",
+    "image": "/images/leader-1.png"
+  },
+  {
+    "name": "Abaddon the Despoiler",
+    "description": "Warmaster of Chaos and leader of the Black Legion.",
+    "image": "/images/leader-2.png"
+  },
+  {
+    "name": "Commander Farsight",
+    "description": "Renegade Tau commander wielding the Dawn Blade.",
+    "image": "/images/leader-3.png"
+  },
+  {
+    "name": "Saint Celestine",
+    "description": "Living saint of the Adepta Sororitas with miraculous powers.",
+    "image": "/images/leader-4.png"
+  },
+  {
+    "name": "Ghazghkull Mag Uruk Thraka",
+    "description": "The most powerful Ork Warlord in the galaxy.",
+    "image": "/images/leader-5.png"
+  },
+  {
+    "name": "Trazyn the Infinite",
+    "description": "A Necron Overlord and obsessive collector of rare artifacts.",
+    "image": "/images/leader-6.png"
+  },
+  {
+    "name": "Magnus the Red",
+    "description": "Primarch of the Thousand Sons and powerful sorcerer of Tzeentch.",
+    "image": "/images/leader-7.png"
+  },
+  {
+    "name": "Sanguinius",
+    "description": "Angel-winged Primarch of the Blood Angels, slain at Terra.",
+    "image": "/images/leader-8.png"
+  },
+  {
+    "name": "Inquisitor Eisenhorn",
+    "description": "Imperial Inquisitor known for walking the edge of heresy.",
+    "image": "/images/leader-1.png"
+  },
+  {
+    "name": "Mortarion",
+    "description": "Daemon Primarch of the Death Guard, champion of Nurgle.",
+    "image": "/images/leader-1.png"
+  }
+]

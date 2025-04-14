@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Belisarius Cawl",
+    "description": "Archmagos Dominus of Mars and architect of the Primaris project.",
+    "image": "https://via.placeholder.com/400x300?text=Cawl"
+  },
+  {
+    "name": "Logan Grimnar",
+    "description": "The Great Wolf of the Space Wolves Chapter.",
+    "image": "https://via.placeholder.com/400x300?text=Grimnar"
+  },
+  {
+    "name": "Yvraine",
+    "description": "High Priestess of Ynnead and leader of the Ynnari.",
+    "image": "https://via.placeholder.com/400x300?text=Yvraine"
+  },
+  {
+    "name": "Darkstrider",
+    "description": "Master Pathfinder of the Tau Empire known for battlefield deception.",
+    "image": "https://via.placeholder.com/400x300?text=Darkstrider"
+  },
+  {
+    "name": "Typhus",
+    "description": "Host of the Destroyer Hive and right hand of Mortarion.",
+    "image": "https://via.placeholder.com/400x300?text=Typhus"
+  },
+  {
+    "name": "Mephiston",
+    "description": "Chief Librarian of the Blood Angels, once known as the Lord of Death.",
+    "image": "https://via.placeholder.com/400x300?text=Mephiston"
+  },
+  {
+    "name": "Szarekh",
+    "description": "Silent King of the Necrons, returned to lead his people.",
+    "image": "https://via.placeholder.com/400x300?text=Szarekh"
+  },
+  {
+    "name": "Cypher",
+    "description": "Mysterious Fallen Angel, hunted by the Imperium and Chaos alike.",
+    "image": "https://via.placeholder.com/400x300?text=Cypher"
+  },
+  {
+    "name": "Aun'Va",
+    "description": "The Ethereal Supreme of the Tau Empire.",
+    "image": "https://via.placeholder.com/400x300?text=AunVa"
+  },
+  {
+    "name": "Kaldor Draigo",
+    "description": "Supreme Grand Master of the Grey Knights, trapped in the Warp.",
+    "image": "https://via.placeholder.com/400x300?text=Draigo"
+  }
+]
