@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Lelith Hesperax",
+    "description": "Master gladiator of the Dark Eldar's Wych Cults.",
+    "image": "https://via.placeholder.com/400x300?text=Lelith"
+  },
+  {
+    "name": "Ursarkar E. Creed",
+    "description": "Legendary general of the Astra Militarum, master tactician.",
+    "image": "https://via.placeholder.com/400x300?text=Creed"
+  },
+  {
+    "name": "Lucius the Eternal",
+    "description": "Champion of Slaanesh who cannot die permanently.",
+    "image": "https://via.placeholder.com/400x300?text=Lucius"
+  },
+  {
+    "name": "Fabious Bile",
+    "description": "Twisted Apothecary of Chaos known for dark experiments.",
+    "image": "https://via.placeholder.com/400x300?text=Bile"
+  },
+  {
+    "name": "Vulkan He’stan",
+    "description": "Forgefather of the Salamanders, seeking Vulkan's relics.",
+    "image": "https://via.placeholder.com/400x300?text=He%27stan"
+  },
+  {
+    "name": "Trazyn the Infinite",
+    "description": "Necron collector again... probably escaped his vault again.",
+    "image": "https://via.placeholder.com/400x300?text=Trazyn+2"
+  },
+  {
+    "name": "Pedro Kantor",
+    "description": "Chapter Master of the Crimson Fists, a stubborn and strategic leader.",
+    "image": "https://via.placeholder.com/400x300?text=Kantor"
+  },
+  {
+    "name": "Helbrecht",
+    "description": "High Marshal of the Black Templars, zeal incarnate.",
+    "image": "https://via.placeholder.com/400x300?text=Helbrecht"
+  },
+  {
+    "name": "Asdrubael Vect",
+    "description": "Supreme overlord of Commorragh, ruler of the Dark Eldar.",
+    "image": "https://via.placeholder.com/400x300?text=Vect"
+  },
+  {
+    "name": "Janus Draik",
+    "description": "Rogue Trader known for deep expeditions into the Blackstone Fortresses.",
+    "image": "https://via.placeholder.com/400x300?text=Draik"
+  }
+]
