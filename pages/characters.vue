@@ -1,11 +1,4 @@
-<script setup lang="ts">
-
+<script setup>
+await navigateTo('/actors/', { redirectCode: 301 });
 </script>
-
-<template>
-
-</template>
-
-<style scoped>
-
-</style>
+<template><p><NuxtLink to="/actors/">Перейти к действующим лицам</NuxtLink></p></template>

@@ -1,21 +1,9 @@
 <template>
-  <div class="min-h-screen flex flex-col bg-black text-white font-serif">
-    <!-- Header -->
-    <header class="bg-white/5 py-4 shadow-md">
-      <div class="max-w-screen-xl mx-auto px-6 text-center">
-        <h1 class="text-3xl font-bold tracking-wide uppercase">LiveIsBetter</h1>
-      </div>
-    </header>
-
-    <!-- Main Content -->
-    <main class="flex-1">
-      <NuxtPage />
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-white/5 py-4 mt-12 text-center text-white/70 text-sm border-t border-white/10">
-      <p>&copy; 2025 LiveIsBetter - Fan Project. All rights reserved.</p>
-    </footer>
+  <div class="site-shell">
+    <a class="skip-link" href="#main-content">Перейти к содержанию</a>
+    <header class="masthead"><div class="masthead-top"><span>Художественная сатира</span><span>Протоколы далёкого будущего</span></div><NuxtLink to="/" class="wordmark" aria-label="WHNEWS — главная"><span>WH</span>NEWS<span class="wordmark-star" aria-hidden="true">✦</span></NuxtLink><p class="masthead-caption">Хроники · Личные дела · Далёкие миры</p><nav class="main-nav" aria-label="Главная навигация"><NuxtLink to="/">Хроники</NuxtLink><NuxtLink to="/actors/">Действующие лица</NuxtLink><NuxtLink to="/worlds/">Миры</NuxtLink><NuxtLink to="/systems/">Системы</NuxtLink></nav></header>
+    <main id="main-content" class="site-main"><slot /></main>
+    <footer class="site-footer"><div><NuxtLink to="/" class="footer-brand">WHNEWS</NuxtLink><p>Реальный мир — в вымышленных летописях.</p></div><p>Фанатский сатирический проект. Персонажи, их образы и хроники — художественный вымысел. Не является официальным проектом Warhammer или RT.</p><NuxtLink to="/news/">Архив хроник ↗</NuxtLink></footer>
   </div>
 </template>
 
