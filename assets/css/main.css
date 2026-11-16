@@ -93,6 +93,12 @@ h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; font-weight: 400; l
 .chronicle-body { font-family: Georgia, "Times New Roman", serif; font-size: 22px; color: #d8dce3; line-height: 1.85; white-space: pre-line; padding: 30px 0 35px; }
 .chronicle-people { margin: 5px 0 32px; }
 .chronicle-people h2 { font-size: 20px; margin-bottom: 15px; }
+.chronicle-participants { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(150px, 100%), 1fr)); gap: 20px; list-style: none; margin: 0; padding: 0; }
+.chronicle-participants li { min-width: 0; }
+.chronicle-participant { display: block; max-width: 240px; height: 100%; border: 1px solid var(--line); background: var(--panel); }
+.chronicle-participant:hover { border-color: var(--accent); }
+.chronicle-participant > img, .chronicle-participant > .portrait-pending { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 25%; }
+.chronicle-participant-name { display: block; padding: 12px; font-size: 14px; line-height: 1.5; overflow-wrap: anywhere; }
 .source-note { border-top: 1px solid var(--line); padding-top: 24px; color: var(--muted); font-size: 12px; }
 .source-note p { margin-bottom: 10px; }
 .source-note a { color: var(--accent); }
