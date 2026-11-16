@@ -78,3 +78,40 @@ bun run preview
 ```
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+
+## Static radio
+
+The header's WHNEWS radio runs entirely in the browser. `content/radio.json`
+defines one fixed edition: 103 AI-generated fan songs, their measured MP3
+durations, immutable audio paths, UTC epoch and shuffle seed. Web audio is stored
+in `public/radio/tracks/` (160 kbit/s MP3); generation tools, model weights,
+private catalogs and FLAC masters are not part of the public repository.
+
+`utils/radio-schedule.mjs` sorts tracks by a stable seeded hash and maps
+`(Date.now() - epoch) mod totalDuration` onto half-open track intervals. All
+listeners with accurate device clocks therefore share the same approximate
+track and position, including before the epoch and after the full loop repeats.
+Keep the manifest and seed unchanged for this edition; a changed playlist is a
+new station edition. No time service, random shuffle, stream server or backend
+request is involved.
+
+Audio downloads start only after clicking Listen. The player rechecks UTC every
+second, on track end, metadata arrival, page restore and tab activation. It
+corrects drift above 1.5 seconds, reconnects at the live position after Stop,
+and exposes an explicit retry after a media/playback error. Volume alone is
+remembered locally when storage is available. Playback remains in the shared
+layout during client-side navigation. Browsers may suspend hidden tabs; exact
+sample synchronization and operation with incorrect device clocks are not
+guaranteed.
+
+Run `node --test tests/*.test.mjs`, `npm run build`, `npm run generate`, then
+`node tools/validate-static.mjs`. Unit tests use a fake audio element and clock;
+they do not establish live-browser decoding or actual Pages delivery. Publish
+the validated `.output/public` through `tools/sync-static.mjs` into `docs/`,
+preserving `CNAME`, `.nojekyll` and the tracked ownership manifest.
+
+The MP3 edition is approximately 334 MB. GitHub Pages limits the published site
+to 1 GB and applies a soft bandwidth limit to branch-based publishing; see
+[GitHub Pages limits](https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits).
+Commit audio as ordinary Git files, not LFS pointers. A large audience may
+eventually require separate audio hosting.
