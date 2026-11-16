@@ -33,8 +33,23 @@ export function filesIn(root) {
 }
 
 export function validateCatalog(catalog) {
-  check(exact(catalog, ['schemaVersion', 'actors', 'news']) && catalog.schemaVersion === 1 &&
+  const version = catalog?.schemaVersion;
+  check(exact(catalog, version === 2 ? ['schemaVersion', 'actors', 'news', 'worlds', 'systems'] : ['schemaVersion', 'actors', 'news']) && [1, 2].includes(version) &&
     Array.isArray(catalog.actors) && Array.isArray(catalog.news), 'Invalid catalog schema');
+  const places = { worlds: new Set(), systems: new Set() };
+  const refs = (value, known) => Array.isArray(value) && new Set(value).size === value.length && value.every(id => known.has(id));
+  if (version === 2) {
+    for (const [kind, prefix] of [['systems', 's'], ['worlds', 'w']]) {
+      check(Array.isArray(catalog[kind]), 'Invalid geography collection');
+      for (const place of catalog[kind]) {
+        check(exact(place, kind === 'worlds' ? ['id', 'name', 'description', 'systemIds'] : ['id', 'name', 'description']), 'Invalid place fields');
+        check(typeof place.id === 'string' && place.id.length <= 80 && new RegExp(`^${prefix}-[a-z0-9]+(?:-[a-z0-9]+)*$`).test(place.id) && !places[kind].has(place.id), 'Invalid or duplicate place ID');
+        places[kind].add(place.id);
+        check(plain(place.name) && [...place.name.trim()].length <= 160 && plain(place.description) && [...place.description.trim()].length <= 500 && !/[\p{C}<>]/u.test(place.name + place.description), 'Invalid place text');
+        if (kind === 'worlds') check(refs(place.systemIds, places.systems), 'Invalid world system references');
+      }
+    }
+  }
   const actors = new Set(), stories = new Set(), sources = new Set();
   for (const actor of catalog.actors) {
     check(exact(actor, ['id', 'name', 'description', 'image']), 'Invalid actor fields');
@@ -45,7 +60,8 @@ export function validateCatalog(catalog) {
       !actor.image.split('/').includes('..')), `Portrait is unsafe: ${actor.id}`);
   }
   for (const story of catalog.news) {
-    check(exact(story, ['id', 'title', 'text', 'date', 'source', 'actorIds']), 'Invalid story fields');
+    check(exact(story, version === 2 ? ['id', 'title', 'text', 'date', 'source', 'actorIds', 'worldIds', 'systemIds'] : ['id', 'title', 'text', 'date', 'source', 'actorIds']), 'Invalid story fields');
+    if (version === 2) check(refs(story.worldIds, places.worlds) && refs(story.systemIds, places.systems), 'Invalid news geography references');
     const archive = /^archive-\d{3}$/.test(story.id);
     check((archive || /^rt-[a-f0-9]{20}$/.test(story.id)) && !stories.has(story.id), 'Invalid or duplicate story ID');
     stories.add(story.id);
