@@ -1,4 +1,5 @@
-import { copyFileSync, existsSync, lstatSync, mkdirSync, readFileSync, realpathSync, unlinkSync, writeFileSync } from 'node:fs';
+import { copyFileSync, existsSync, lstatSync, mkdirSync, readFileSync, realpathSync, renameSync, unlinkSync, writeFileSync } from 'node:fs';
+import { randomUUID } from 'node:crypto';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { filesIn, inside, validateStatic } from './validate-static.mjs';
@@ -28,17 +29,30 @@ export function syncStatic({ root, releaseId, ownedFiles }) {
   assert(cname === 'lifeisbetter.ru', 'Unexpected Pages domain');
   const files = filesIn(output).filter(path => !reserved.has(path));
   for (const path of [...previous, ...files]) inside(docs, path);
+  // A killed copy must leave either the previous or the complete next file.
+  // Staging is ignored build output, outside the publicly served output tree.
+  const staging = join(project, '.output/.sync-staging');
+  mkdirSync(staging, { recursive: true });
+  assert(realpathSync(staging) === staging, 'Invalid sync staging root');
+  const replace = (target, source, bytes) => {
+    const temporary = join(staging, `${randomUUID()}.tmp`);
+    try {
+      if (source) copyFileSync(source, temporary);
+      else writeFileSync(temporary, bytes);
+      renameSync(temporary, target);
+    } finally { if (existsSync(temporary)) unlinkSync(temporary); }
+  };
   for (const path of files) {
     const target = inside(docs, path);
     mkdirSync(dirname(target), { recursive: true });
-    copyFileSync(join(output, path), target);
+    replace(target, join(output, path));
   }
   const next = new Set(files);
   for (const path of previous) if (!next.has(path) && !reserved.has(path) && existsSync(inside(docs, path))) unlinkSync(inside(docs, path));
-  writeFileSync(join(docs, 'CNAME'), `${cname}\n`);
-  writeFileSync(join(docs, '.nojekyll'), '');
-  writeFileSync(join(docs, 'release.json'), `${JSON.stringify({ releaseId })}\n`);
-  writeFileSync(join(docs, '.whnews-files.json'), `${JSON.stringify(files, null, 2)}\n`);
+  replace(join(docs, 'CNAME'), null, `${cname}\n`);
+  replace(join(docs, '.nojekyll'), null, '');
+  replace(join(docs, 'release.json'), null, `${JSON.stringify({ releaseId })}\n`);
+  replace(join(docs, '.whnews-files.json'), null, `${JSON.stringify(files, null, 2)}\n`);
   return { ...validation, releaseId, copied: files.length };
 }
 
