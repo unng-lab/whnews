@@ -41,8 +41,8 @@ export function validateCatalog(catalog) {
     check(/^a-[a-f0-9]{16}$/.test(actor.id) && !actors.has(actor.id), 'Invalid or duplicate actor ID');
     actors.add(actor.id);
     check(plain(actor.name) && actor.name.length <= 160 && plain(actor.description), 'Invalid actor text');
-    check(typeof actor.image === 'string' && /^\/images\/[a-zA-Z0-9_./-]+\.(png|jpe?g|webp)$/.test(actor.image) &&
-      !actor.image.split('/').includes('..'), `Portrait is missing or unsafe: ${actor.id}`);
+    check(actor.image === null || (typeof actor.image === 'string' && /^\/images\/[a-zA-Z0-9_./-]+\.(png|jpe?g|webp)$/.test(actor.image) &&
+      !actor.image.split('/').includes('..')), `Portrait is unsafe: ${actor.id}`);
   }
   for (const story of catalog.news) {
     check(exact(story, ['id', 'title', 'text', 'date', 'source', 'actorIds']), 'Invalid story fields');
@@ -55,6 +55,7 @@ export function validateCatalog(catalog) {
     check(Array.isArray(story.actorIds) && new Set(story.actorIds).size === story.actorIds.length &&
       story.actorIds.every(id => actors.has(id)), 'Unknown or duplicate actor reference');
     if (archive) { check(story.source === null, 'Archive provenance must remain unknown'); continue; }
+    check(story.actorIds.every(id => catalog.actors.find(actor => actor.id === id).image !== null), 'New story actor has no portrait');
     check(exact(story.source, ['name', 'url', 'publishedAt']) && story.source.name === 'RT на русском', 'Invalid source');
     let url;
     try { url = new URL(story.source.url); } catch { throw new Error('Invalid source URL'); }

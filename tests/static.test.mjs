@@ -20,12 +20,21 @@ function tree(t) {
   return { root, output, data, put };
 }
 
-test('catalog rejects missing portraits, unknown fields, duplicate IDs and unknown actor links', () => {
+test('catalog rejects unsafe portraits, unknown fields, duplicate IDs and unknown actor links', () => {
   validateCatalog(fixture());
-  for (const change of [data => data.actors[0].image = null, data => data.actors[0].aliases = ['private'],
+  for (const change of [data => data.actors[0].image = '/images/../secret.png', data => data.actors[0].aliases = ['private'],
     data => data.actors.push(data.actors[0]), data => data.news[0].actorIds = ['missing']]) {
     const data = fixture(); change(data); assert.throws(() => validateCatalog(data));
   }
+});
+
+test('archive may retain a portrait placeholder but new stories require every portrait', () => {
+  const data = fixture(); data.actors[0].image = null;
+  data.news[0].actorIds = [data.actors[0].id];
+  validateCatalog(data);
+  data.news.push({ ...data.news[0], id: 'rt-' + 'a'.repeat(20), date: '2026-11-16T12:00:00Z', text: 'x'.repeat(300),
+    source: { name: 'RT на русском', url: 'https://russian.rt.com/example', publishedAt: null } });
+  assert.throws(() => validateCatalog(data), /no portrait/);
 });
 
 test('static validation checks all routes and local references, without fetching external articles', t => {

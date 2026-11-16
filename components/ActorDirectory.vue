@@ -28,7 +28,7 @@ const searchId = computed(() => props.compact ? 'sidebar-actor-search' : 'catalo
     <div class="actor-search"><label :for="searchId">Найти персонажа</label><input :id="searchId" v-model="query" type="search" placeholder="Имя персонажа…" autocomplete="off"><p v-if="searching" class="search-count" aria-live="polite">Найдено: {{ filtered.length }}</p></div>
     <div class="actor-cards" :class="{ 'actor-cards-grid': !compact }">
       <article v-for="actor in selection.items" :key="actor.id" class="actor-card">
-        <NuxtLink :to="actorHref(actor.id)" class="actor-portrait-link" tabindex="-1" aria-hidden="true"><img v-if="actor.image" :src="actor.image" :alt="actor.name" loading="lazy" width="240" height="300"><span v-else class="portrait-pending">Портрет<br>готовится</span></NuxtLink>
+        <NuxtLink :to="actorHref(actor.id)" class="actor-portrait-link" tabindex="-1" aria-hidden="true"><img v-if="actor.image" :src="actor.image" :alt="actor.name" loading="lazy" width="240" height="300"><span v-else class="portrait-pending">Портрет пока<br>не добавлен</span></NuxtLink>
         <div class="actor-card-copy"><h3><NuxtLink :to="actorHref(actor.id)">{{ actor.name }}</NuxtLink></h3><p>{{ actor.description }}</p><NuxtLink v-if="!compact" class="small-link" :to="actorHref(actor.id)">Личное дело и хроники ↗</NuxtLink></div>
       </article>
     </div>
