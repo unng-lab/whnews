@@ -114,7 +114,7 @@ h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; font-weight: 400; l
   .site-shell { width: calc(100% - 36px); }
   .masthead-top { font-size: 8px; gap: 15px; letter-spacing: .1em; }
   .masthead-top span:last-child { text-align: right; }
-  .wordmark { font-size: 70px; }
+  .wordmark { font-size: clamp(46px, 16vw, 70px); }
   .wordmark-star { right: -22px; top: 24px; font-size: 15px; }
   .masthead-caption { font-size: 8px; letter-spacing: .15em; margin-bottom: 20px; }
   .main-nav { gap: 24px; font-size: 10px; letter-spacing: 0; overflow-x: auto; justify-content: flex-start; white-space: nowrap; }
@@ -134,3 +134,17 @@ h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; font-weight: 400; l
   .legacy-list { grid-template-columns: minmax(0, 1fr); }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+
+.place-search { max-width: 480px; margin: 26px 0; }
+.place-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+.place-card { display: flex; flex-direction: column; min-width: 0; padding: 25px; border: 1px solid var(--line); background: linear-gradient(145deg, #171e29, #10151d); }
+.place-card h2 { font-size: 27px; margin: 15px 0; letter-spacing: -.025em; overflow-wrap: anywhere; }
+.place-description { color: var(--muted); font-size: 14px; line-height: 1.85; }
+.place-card-bottom { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; justify-content: space-between; margin-top: auto; padding-top: 24px; font-size: 11px; color: var(--muted); }
+.place-profile { max-width: 1000px; margin: 0 auto; }
+.place-profile h1 { overflow-wrap: anywhere; }
+.place-relations { padding: 25px 0; border-bottom: 1px solid var(--line); }
+.place-relations h2 { font-size: 19px; margin-bottom: 16px; }
+.chronicle-geography { margin-bottom: 30px; }
+@media (max-width: 1100px) { .place-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 760px) { .place-grid { grid-template-columns: minmax(0, 1fr); } }

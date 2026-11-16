@@ -27,6 +27,18 @@ export function parsePage(value) {
 
 export const newsHref = id => `/news/${encodeURIComponent(id)}/`;
 export const actorHref = id => `/actors/${encodeURIComponent(id)}/`;
+export const placeHref = (kind, id) => `/${kind}/${encodeURIComponent(id)}/`;
+
+export function effectiveSystemIds(story, worlds = []) {
+  const worldIds = new Set(story.worldIds ?? []);
+  return [...new Set([...(story.systemIds ?? []), ...worlds.filter(world => worldIds.has(world.id)).flatMap(world => world.systemIds)])].sort();
+}
+
+export function placeNews(catalog, kind, id) {
+  return sortNews(catalog.news.filter(story => kind === 'worlds'
+    ? (story.worldIds ?? []).includes(id)
+    : effectiveSystemIds(story, catalog.worlds).includes(id)));
+}
 export const pageHref = (base, page) => page === 1 ? base : `${base}page/${page}/`;
 
 export function pageNumbers(total, current) {
@@ -45,6 +57,13 @@ export function staticRoutes(catalog) {
   for (const actor of catalog.actors) {
     routes.add(actorHref(actor.id));
     addPages(actorHref(actor.id), actorNews(catalog.news, actor.id));
+  }
+  for (const kind of ['worlds', 'systems']) {
+    addPages(`/${kind}/`, catalog[kind] ?? []);
+    for (const place of catalog[kind] ?? []) {
+      routes.add(placeHref(kind, place.id));
+      addPages(placeHref(kind, place.id), placeNews(catalog, kind, place.id));
+    }
   }
   return [...routes].sort();
 }
