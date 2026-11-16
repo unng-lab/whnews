@@ -9,11 +9,12 @@
 </template>
 
 <script setup>
+import systems from '~/public/content/systems.json';
+
 useHead({
   title: 'Imperial Systems - Warhammer 40k Database'
 })
 
-const { data: systems } = await useFetch('/content/systems.json')
 </script>
 
 <style>
