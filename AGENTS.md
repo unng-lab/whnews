@@ -9,22 +9,23 @@
 - `docs/` contains generated static site output. Change source files first;
   regenerate output only when the task requires updating the published site.
 - Keep secrets out of commits, public assets and build output.
-- `backend/` is a Git submodule backed by the private `whnews-backend`
-  repository. Commit backend changes there before updating the parent gitlink.
-  The public repository stores only the submodule URL and commit reference.
+- This public repository is included as the `whnews/` Git submodule of the
+  private `whnews-backend` repository. It can also be used as a standalone clone.
+- Commit and push frontend changes here before updating the submodule reference
+  in the private parent repository.
 
 ## Spec Kit
 
-- Spec Kit and internal feature specifications belong to the private backend
-  repository: `backend/.specify/`, `backend/.agents/skills/speckit-*` and
-  `backend/specs/` (created when the first feature is specified).
+- Spec Kit and internal feature specifications belong to the private
+  `whnews-backend` repository, in `.specify/`, `.agents/skills/speckit-*`
+  and `specs/` (created when the first feature is specified).
 - If the user asks to work through Spec Kit, use its skills and workflow.
-- Run Spec Kit from `backend/`; use its `.specify/memory/constitution.md`
-  for project principles. Specification paths are relative to `backend/`;
-  explicitly identify frontend paths relative to the parent `whnews/` repository.
-- A public frontend checkout works without initializing the private submodule.
-  Internal work requires access to `whnews-backend` and
-  `git submodule update --init backend` from the parent repository.
+- Run Spec Kit from the private repository root; use its
+  `.specify/memory/constitution.md` for project principles. Paths in internal
+  specifications are relative to that root; frontend paths start with `whnews/`.
+- When this checkout is the private parent's `whnews/` submodule, the private
+  root is `..`. A standalone public clone does not contain internal artifacts
+  and does not require access to the private repository to build the frontend.
 
 ## Required Checks
 

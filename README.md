@@ -1,15 +1,9 @@
 # Nuxt Minimal Starter
 
-The public whnews frontend uses Nuxt. Private backend/MCP work and internal
-Spec Kit artifacts live in the `backend/` Git submodule
-(`unng-lab/whnews-backend`). Frontend setup does not require this submodule.
-With access to the private repository, initialize it using:
-
-```bash
-git submodule update --init backend
-```
-
-Run Spec Kit from `backend/`.
+The public whnews frontend uses Nuxt and can be cloned and built independently.
+It is also included as the `whnews/` submodule of the private
+`unng-lab/whnews-backend` repository. Backend/MCP work and internal Spec Kit
+artifacts belong to that private repository; run Spec Kit from its root.
 
 Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
