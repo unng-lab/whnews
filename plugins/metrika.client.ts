@@ -1,3 +1,5 @@
+import { renderDOMHead } from '@unhead/vue/client';
+
 type Metrika = {
   (...args: unknown[]): void;
   a?: unknown[][];
@@ -45,5 +47,11 @@ export default defineNuxtPlugin((nuxtApp) => {
   };
 
   onNuxtReady(trackPage);
-  nuxtApp.hook('page:finish', trackPage);
+  const head = injectHead();
+  nuxtApp.hook('page:finish', async () => {
+    // Nuxt starts updating <head> at page:finish without awaiting it.
+    // Wait for that render before reading the new page's title.
+    await renderDOMHead(head);
+    trackPage();
+  });
 });
