@@ -1,8 +1,11 @@
 import { lstatSync, readFileSync, readdirSync, realpathSync } from 'node:fs';
 import { dirname, extname, isAbsolute, join, relative, resolve, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { createHash } from 'node:crypto';
 import { parse, walkSync, ELEMENT_NODE } from 'ultrahtml';
 import { staticRoutes } from '../utils/catalog.mjs';
+import { validateRadioProgram } from '../utils/radio-program.mjs';
+import { validateVoiceRuntime } from '../utils/radio-speech.mjs';
 
 const siteOrigin = 'https://lifeisbetter.ru';
 const check = (condition, message) => { if (!condition) throw new Error(message); };
@@ -85,7 +88,24 @@ export function validateCatalog(catalog) {
 // The validator reads generated files only; no HTTP requests or application runtime.
 export function validateStatic({ catalog, output }) {
   validateCatalog(catalog);
-  return validateReferences({ catalog, output });
+  const result = validateReferences({ catalog, output });
+  const files = new Set(filesIn(resolve(output)));
+  if (files.has('radio/program.json')) {
+    const root = resolve(output), read = path => JSON.parse(readFileSync(join(root, path), 'utf8'));
+    const music = JSON.parse(readFileSync(new URL('../content/radio.json', import.meta.url), 'utf8'));
+    const program = validateRadioProgram(read('radio/program.json'), music);
+    const runtime = validateVoiceRuntime(read('radio/voice/runtime-v1.json'));
+    check(program.modelRevision === runtime.model.sha256 && program.fallbackSrc === runtime.fallbackSrc, 'Radio runtime edition differs');
+    for (const entry of [runtime.model, runtime.config]) {
+      const bytes = readFileSync(join(root, entry.src.slice(1)));
+      check(createHash('sha256').update(bytes).digest('hex') === entry.sha256, 'Radio asset hash differs');
+    }
+    for (const path of [program.fallbackSrc, ...['ort.wasm.min.mjs', 'ort-wasm-simd-threaded.mjs', 'ort-wasm-simd-threaded.wasm', 'LICENSE.txt'].map(name => runtime.ort.baseUrl + name)])
+      check(files.has(path.slice(1)), `Missing radio runtime: ${path}`);
+    for (const bank of program.banks) for (const dialogue of bank.dialogues)
+      check(catalog.news.some(story => story.id === dialogue.storyId), 'Radio refers to unknown story');
+  }
+  return result;
 }
 
 // Useful for diagnosing a draft catalog; this does not establish release readiness.

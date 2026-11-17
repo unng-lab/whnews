@@ -1,7 +1,7 @@
 // Audio transport is injected so clock changes, buffering and play races can be tested without a browser.
 export function createRadioPlayer({ audio, schedule, now = Date.now, resolveUrl = track => track.src, onChange = () => {} }) {
   const state = { wanted: false, playing: false, loading: false, error: '', slot: schedule.atUtc(now()) };
-  let loadedId = null, generation = 0, pending = null, disposed = false;
+  let loadedId = null, loadedSource = null, generation = 0, pending = null, disposed = false;
   audio.preload = 'none';
   const emit = () => { if (!disposed) onChange({ ...state }); };
   function fail(message) {
@@ -32,10 +32,11 @@ export function createRadioPlayer({ audio, schedule, now = Date.now, resolveUrl 
     if (disposed) return;
     state.slot = schedule.atUtc(now());
     if (state.wanted) {
-      if (loadedId !== state.slot.track.id) {
-        generation++; pending = null; loadedId = state.slot.track.id;
+      const source = resolveUrl(state.slot.track);
+      if (loadedId !== state.slot.track.id || loadedSource !== source) {
+        generation++; pending = null; loadedId = state.slot.track.id; loadedSource = source;
         state.playing = false; state.loading = true;
-        audio.src = resolveUrl(state.slot.track); audio.load();
+        audio.src = source; audio.load();
         seek(true); play();
       } else {
         seek(force);
@@ -59,7 +60,7 @@ export function createRadioPlayer({ audio, schedule, now = Date.now, resolveUrl 
   for (const [name, listener] of Object.entries(events)) audio.addEventListener(name, listener);
   function stop() {
     generation++; pending = null; state.wanted = false; state.playing = false; state.loading = false;
-    audio.pause(); audio.removeAttribute('src'); loadedId = null; audio.load(); emit();
+    audio.pause(); audio.removeAttribute('src'); loadedId = null; loadedSource = null; audio.load(); emit();
   }
   return {
     tick,
