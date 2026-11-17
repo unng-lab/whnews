@@ -1,4 +1,7 @@
 // A fixed edition of the station: UTC, half-open track intervals, no random runtime state.
+const localTrack = /^\/radio\/tracks\/[a-zA-Z0-9-]+\.mp3$/;
+const cloudTrack = /^https:\/\/whnews-radio\.s3\.cloud\.ru\/radio\/xl-v1\/[a-zA-Z0-9-]+\.mp3$/;
+
 export function stableHash(text) {
   let hash = 2166136261;
   for (const code of new TextEncoder().encode(text)) hash = Math.imul(hash ^ code, 16777619) >>> 0;
@@ -14,7 +17,7 @@ export function createRadioSchedule(manifest) {
     if (!track || typeof track.id !== 'string' || !track.id || ids.has(track.id) ||
         typeof track.title !== 'string' || !track.title.trim() ||
         !Number.isSafeInteger(track.durationMs) || track.durationMs < 1000 ||
-        typeof track.src !== 'string' || !/^\/radio\/tracks\/[a-zA-Z0-9-]+\.mp3$/.test(track.src)) {
+        typeof track.src !== 'string' || !(localTrack.test(track.src) || cloudTrack.test(track.src))) {
       throw new TypeError('Invalid radio track');
     }
     ids.add(track.id);
@@ -41,6 +44,7 @@ export function createRadioSchedule(manifest) {
 }
 
 export function radioAudioUrl(baseURL, src) {
+  if (cloudTrack.test(src)) return src;
   return `${baseURL.replace(/\/$/, '')}${src}`;
 }
 

@@ -145,3 +145,18 @@ test('published edition has 103 unique real MP3s with matching sizes and hashes'
   }
   assert.equal(hashes.size, 103); assert.ok(bytes < 400 * 1024 * 1024);
 });
+
+test('only the station S3 prefix is accepted for remote music', () => {
+  const manifest = JSON.parse(readFileSync(new URL('../content/radio.json', import.meta.url), 'utf8'));
+  const track = { ...manifest.tracks[0] };
+  const src = 'https://whnews-radio.s3.cloud.ru/radio/xl-v1/001.mp3';
+  const edition = { ...manifest, tracks: [{ ...track, src }] };
+  assert.equal(createRadioSchedule(edition).tracks[0].src, src);
+  assert.equal(radioAudioUrl('/whnews/', src), src);
+  for (const invalid of [
+    src.replace('https:', 'http:'),
+    src.replace('s3.cloud.ru', 's3.cloud.ru.example.com'),
+    src.replace('xl-v1/001', 'xl-v1/../001'),
+    src + '?signature=temporary',
+  ]) assert.throws(() => createRadioSchedule({ ...edition, tracks: [{ ...track, src: invalid }] }));
+});

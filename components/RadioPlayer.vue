@@ -32,12 +32,43 @@
       <span>Фанатский эфир · голоса создаются на устройстве</span>
     </div>
     <RadioHosts />
+    <div v-show="previewTrack" class="radio-preview">
+      <div class="radio-preview-heading">
+        <p>{{ previewTrack?.title }}</p>
+        <button type="button" @click="clearPreview">Закрыть проигрыватель</button>
+      </div>
+      <audio ref="preview" controls preload="none" aria-label="Проигрыватель выбранного трека" @error="onPreviewError"></audio>
+      <p v-if="previewError" class="radio-error" role="status">{{ previewError }}</p>
+    </div>
+    <details class="radio-library" @toggle="libraryOpen = $event.target.open">
+      <summary>Список треков ({{ manifest.tracks.length }})</summary>
+      <div v-if="libraryOpen">
+        <label class="radio-search">
+          Поиск по названию и жанру
+          <input type="search" v-model.trim="query" @input="trackPage = 0">
+        </label>
+        <nav v-if="pageCount > 1" class="radio-pages" aria-label="Страницы треков">
+          <button type="button" :disabled="trackPage === 0" @click="trackPage--">Назад</button>
+          <span aria-live="polite">{{ trackPage + 1 }} из {{ pageCount }}</span>
+          <button type="button" :disabled="trackPage + 1 >= pageCount" @click="trackPage++">Далее</button>
+        </nav>
+        <ol v-if="filteredTracks.length" aria-label="Треки радио">
+          <li v-for="track in pageTracks" :key="track.id">
+            <button type="button" :aria-label="`Слушать «${track.title}»`" @click="playTrack(track)">
+              <span>{{ track.title }}<small v-if="track.genre">{{ track.genre }}</small></span>
+              <span>{{ radioTime(track.durationMs) }} <span aria-hidden="true">▶</span></span>
+            </button>
+          </li>
+        </ol>
+        <p v-else>Треки по этому запросу не найдены.</p>
+      </div>
+    </details>
     <noscript>Для прослушивания радио включите JavaScript.</noscript>
   </section>
 </template>
 
 <script setup>
-import { computed, onMounted, onBeforeUnmount, ref, shallowRef } from 'vue';
+import { computed, nextTick, onMounted, onBeforeUnmount, ref, shallowRef } from 'vue';
 import manifest from '~/content/radio.json';
 import hosts from '~/content/radio-hosts.json';
 import { radioAudioUrl, radioTime } from '~/utils/radio-schedule.mjs';
@@ -48,6 +79,19 @@ import { createSpeechEngine, validateVoiceRuntime } from '~/utils/radio-speech.m
 const baseURL = useRuntimeConfig().app.baseURL;
 const hostNames = hosts.map(host => host.name).join(' и ');
 const ready = ref(false), volume = ref(50);
+const pageSize = 30;
+const libraryOpen = ref(false), trackPage = ref(0), query = ref('');
+const preview = ref(null), previewTrack = shallowRef(null), previewError = ref('');
+const filteredTracks = computed(() => {
+  const term = query.value.toLocaleLowerCase('ru');
+  if (!term) return manifest.tracks;
+  return manifest.tracks.filter(track => `${track.title} ${track.genre ?? ''}`.toLocaleLowerCase('ru').includes(term));
+});
+const pageCount = computed(() => Math.ceil(filteredTracks.value.length / pageSize));
+const pageTracks = computed(() => {
+  const start = trackPage.value * pageSize;
+  return filteredTracks.value.slice(start, start + pageSize);
+});
 const state = shallowRef({ wanted: false, playing: false, loading: false, error: '', slot: null });
 const voiceStatus = shallowRef({ phase: 'idle', message: '' });
 const schedule = createLiveRadioSchedule(manifest);
@@ -83,10 +127,35 @@ function makeSpeech() {
 async function retrySpeech() { if (!runtime) await refreshProgram(); if (!disposed && state.value.wanted) { makeSpeech(); speech?.prepare(schedule.speechSlots(Date.now())); } }
 function toggle() {
   if (state.value.wanted) { player.stop(); speech?.dispose(); speech = null; voiceStatus.value = { phase: 'idle', message: '' }; }
-  else { makeSpeech(); player.start(); }
+  else { clearPreview(); makeSpeech(); player.start(); }
+}
+function clearPreview() {
+  if (!previewTrack.value || !preview.value) return;
+  previewTrack.value = null;
+  previewError.value = '';
+  preview.value.pause();
+  preview.value.removeAttribute('src');
+  preview.value.load();
+}
+function onPreviewError() {
+  if (previewTrack.value) previewError.value = 'Трек пока недоступен. Попробуйте запустить его ещё раз.';
+}
+function playTrack(track) {
+  const audio = preview.value;
+  if (!audio) return;
+  if (state.value.wanted) toggle();
+  previewTrack.value = track;
+  previewError.value = '';
+  audio.volume = volume.value / 100;
+  audio.src = asset(track.src);
+  audio.play().catch(error => {
+    if (error.name !== 'AbortError' && previewTrack.value === track) onPreviewError();
+  });
+  nextTick(() => { if (previewTrack.value === track) audio.focus(); });
 }
 function changeVolume() {
   player?.setVolume(volume.value / 100);
+  if (preview.value) preview.value.volume = volume.value / 100;
   try { localStorage.setItem('whnews-radio-volume', String(volume.value)); } catch { /* Storage can be disabled. */ }
 }
 onMounted(async () => {
@@ -110,7 +179,7 @@ onMounted(async () => {
   window.addEventListener('pageshow', resync);
 });
 onBeforeUnmount(() => {
-  disposed = true; request?.abort(); clearInterval(timer); clearInterval(poll); document.removeEventListener('visibilitychange', resync);
+  disposed = true; clearPreview(); request?.abort(); clearInterval(timer); clearInterval(poll); document.removeEventListener('visibilitychange', resync);
   window.removeEventListener('pageshow', resync); player?.dispose(); speech?.dispose();
 });
 </script>
@@ -139,6 +208,19 @@ onBeforeUnmount(() => {
 .radio-error { margin-top: 12px; color: #ff9eaa; font-size: 12px; }
 .radio-speech-status { display: flex; flex-wrap: wrap; gap: 12px; font-size: 11px; color: var(--muted); margin-top: 10px; }
 .radio-speech-status button { border: 0; padding: 0; background: none; text-decoration: underline; }
+.radio-library { margin-top: 12px; border-top: 1px solid var(--line); padding-top: 10px; }
+.radio-library summary { cursor: pointer; }
+.radio-search { display: grid; gap: 6px; margin: 10px 0; max-width: 440px; font-size: 12px; }
+.radio-search input { padding: 8px; border: 1px solid var(--line); background: #10141b; }
+.radio-library li button { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 8px; text-align: left; border-bottom: 1px solid var(--line); }
+.radio-library li button:hover { background: #27151c; }
+.radio-library small { display: block; color: var(--muted); }
+.radio-pages, .radio-preview-heading { display: flex; justify-content: space-between; gap: 12px; align-items: center; }
+.radio-pages { margin: 8px 0; }
+.radio-pages button, .radio-preview-heading button { text-decoration: underline; }
+.radio-pages button:disabled { opacity: .5; }
+.radio-preview { margin-top: 12px; }
+.radio-preview audio { width: 100%; margin-top: 4px; }
 @media (max-width: 760px) {
   .radio-panel { padding: 14px; }
   .radio-controls { grid-template-columns: minmax(0, 1fr) 100px; gap: 12px; }
