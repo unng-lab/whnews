@@ -1,1 +1,0 @@
-import{_ as n}from"./CiiS5DLE.js";import{k as s,c as r,b as _,w as c,n as p,o as m,d as i}from"./CLouYiv-.js";const f={__name:"characters",async setup(l){let t,e;return[t,e]=s(()=>p("/actors/",{})),await t,e(),(u,a)=>{const o=n;return m(),r("p",null,[_(o,{to:"/actors/"},{default:c(()=>a[0]||(a[0]=[i("Перейти к действующим лицам")])),_:1})])}}};export{f as default};
