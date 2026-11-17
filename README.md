@@ -79,6 +79,16 @@ bun run preview
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
 
+## Automatic chronicle updates
+
+The generated `chronicles.json` contains the same public catalog as the pages.
+Open tabs check it once per minute while visible, on returning to the tab and
+when the network reconnects. A valid new edition updates the shared catalog,
+feed, pagination and linked profiles without reloading the document or stopping
+radio playback. Failed requests retain the previous edition and retry on the
+next check. No application server is required; `npm run generate` prerenders
+the JSON snapshot together with the pages.
+
 ## Static radio
 
 The header's WHNEWS radio runs entirely in the browser. `content/radio.json`
