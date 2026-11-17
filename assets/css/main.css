@@ -18,8 +18,9 @@ h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; font-weight: 400; l
 .skip-link:focus { top: 15px; }
 .masthead { border-top: 4px solid #9f2034; padding-top: 24px; text-align: center; }
 .masthead-top { display: flex; justify-content: space-between; color: var(--muted); font-size: 10px; text-transform: uppercase; letter-spacing: .18em; padding-bottom: 16px; border-bottom: 1px solid var(--line); }
-.wordmark { display: inline-flex; position: relative; align-items: center; font-family: Georgia, "Times New Roman", serif; font-weight: 700; font-size: clamp(58px, 8vw, 108px); letter-spacing: -.075em; line-height: 1.2; padding: 12px 0 0; }
+.wordmark { display: inline-flex; position: relative; align-items: baseline; gap: .15em; max-width: 100%; font-family: Georgia, "Times New Roman", serif; font-weight: 700; font-size: clamp(44px, 7.5vw, 100px); letter-spacing: -.065em; line-height: 1.2; padding: 12px 0 0; }
 .wordmark > span:first-child { color: var(--red); }
+.wordmark-is { font-size: .48em; font-style: italic; font-weight: 400; letter-spacing: -.04em; color: var(--muted); }
 .wordmark-star { text-shadow: 0 0 24px #ef596944; position: absolute; font-size: 21px; right: -32px; top: 29px; color: var(--accent); }
 .masthead-caption { color: var(--muted); font-size: 10px; letter-spacing: .24em; text-transform: uppercase; margin: 0 0 26px; }
 .main-nav { background: linear-gradient(90deg, transparent, #1a202b, transparent); display: flex; justify-content: center; gap: 38px; border-block: 1px solid var(--line); padding: 13px 0; font-size: 12px; letter-spacing: .07em; }
@@ -120,8 +121,8 @@ h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; font-weight: 400; l
   .site-shell { width: calc(100% - 36px); }
   .masthead-top { font-size: 8px; gap: 15px; letter-spacing: .1em; }
   .masthead-top span:last-child { text-align: right; }
-  .wordmark { font-size: clamp(46px, 16vw, 70px); }
-  .wordmark-star { right: -22px; top: 24px; font-size: 15px; }
+  .wordmark { font-size: clamp(32px, 9vw, 68px); }
+  .wordmark-star { right: -16px; top: 18px; font-size: 12px; }
   .masthead-caption { font-size: 8px; letter-spacing: .15em; margin-bottom: 20px; }
   .main-nav { gap: 24px; font-size: 10px; letter-spacing: 0; overflow-x: auto; justify-content: flex-start; white-space: nowrap; }
   .site-main { padding-top: 30px; }

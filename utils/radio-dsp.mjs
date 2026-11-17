@@ -39,11 +39,12 @@ export function wave16(samples, rate = VOICE_RATE) {
   return buffer;
 }
 
-export function buildDialogueWave(turns, rate = VOICE_RATE) {
-  const gap = Math.round(.24 * rate), head = Math.round(.6 * rate), tail = Math.round(.6 * rate);
+export function buildDialogueWave(turns, rate = VOICE_RATE, expectedSamples = null) {
+  const gap = Math.round(.24 * rate), head = Math.round((expectedSamples ? .1 : .6) * rate), tail = Math.round((expectedSamples ? .08 : .6) * rate);
   const speechLength = turns.reduce((n, t) => n + t.audio.length, 0) + gap * Math.max(0, turns.length - 1) + head + tail;
-  if (!turns.length || speechLength > 88 * rate) throw new RangeError('Dialogue exceeds its UTC window');
-  const samples = new Float32Array(VOICE_WINDOW * rate);
+  if (!turns.length || speechLength > 88 * rate || (expectedSamples && speechLength !== expectedSamples)) throw new RangeError('Dialogue exceeds its UTC window');
+  const samples = new Float32Array(expectedSamples ?? VOICE_WINDOW * rate);
+  const windowSeconds = samples.length / rate;
   let cursor = head;
   for (const turn of turns) {
     if (!['A', 'B'].includes(turn.voice)) throw new TypeError('Invalid voice');
@@ -58,11 +59,11 @@ export function buildDialogueWave(turns, rate = VOICE_RATE) {
   for (let i = 0; i < samples.length; i++) {
     envelope = Math.max(Math.abs(samples[i]), envelope * .9994);
     const time = i / rate;
-    const fade = Math.min(time / .3, 1, (VOICE_WINDOW - time) / .5);
+    const fade = Math.min(time / .04, 1, (windowSeconds - time) / .04);
     const bed = (.007 * Math.sin(2 * Math.PI * 73.416 * time) + .003 * Math.sin(2 * Math.PI * 110 * time)) * (1 - .75 * Math.min(envelope / .06, 1));
     samples[i] = (samples[i] + bed) * Math.max(0, fade);
     peak = Math.max(peak, Math.abs(samples[i]));
   }
   if (peak > .92) for (let i = 0; i < samples.length; i++) samples[i] *= .92 / peak;
-  return { wav: wave16(samples, rate), speechSeconds: speechLength / rate, durationMs: VOICE_WINDOW * 1000 };
+  return { wav: wave16(samples, rate), speechSeconds: speechLength / rate, durationMs: Math.ceil(samples.length * 1000 / rate) };
 }

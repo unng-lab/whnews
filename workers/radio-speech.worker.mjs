@@ -49,8 +49,14 @@ async function render(message) {
       let result;
       try {
         result = await session.run(inputs);
-        const audio = result.audio.data.slice();
+        let audio = result.audio.data.slice();
         if (!audio.length || audio.length > 32 * 24000 || !audio.every(Number.isFinite)) throw new Error('Invalid voice output');
+        if (chunk.sampleCount && audio.length !== chunk.sampleCount) {
+          if (Math.abs(audio.length - chunk.sampleCount) > 768) throw new Error('Speech duration prediction differs');
+          const resized = new Float32Array(chunk.sampleCount), ratio = (audio.length - 1) / Math.max(1, resized.length - 1);
+          for (let i = 0; i < resized.length; i++) { const p = i * ratio, k = Math.floor(p); resized[i] = audio[k] + (audio[Math.min(k + 1, audio.length - 1)] - audio[k]) * (p - k); }
+          audio = resized;
+        }
         chunks.push(audio);
       } finally {
         for (const value of Object.values(inputs)) value.dispose();
@@ -63,7 +69,7 @@ async function render(message) {
     for (const chunk of chunks) { audio.set(chunk, offset); offset += chunk.length + pause; }
     turns.push({ voice: turn.voice, audio });
   }
-  const result = buildDialogueWave(turns);
+  const result = buildDialogueWave(turns, 24000, message.script.sampleCount ?? null);
   postMessage({ type: 'done', id: message.id, wav: result.wav, durationMs: result.durationMs,
     speechSeconds: result.speechSeconds, generationMs: performance.now() - began }, [result.wav]);
 }

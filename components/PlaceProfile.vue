@@ -18,7 +18,7 @@ const selection = computed(() => {
   try { return pageSlice(placeNews(catalog, props.kind, id), props.page); }
   catch { throw createError({ statusCode: 404, statusMessage: 'Страница подборки не найдена' }); }
 });
-useHead({ title: computed(() => `${place.value.name} — WHNEWS`) });
+useHead({ title: computed(() => `${place.value.name} — Life is Better`) });
 </script>
 
 <template>

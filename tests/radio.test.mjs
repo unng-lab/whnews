@@ -120,6 +120,18 @@ test('media errors stop retry loops; explicit retry reconnects to live UTC', () 
   f.player.dispose(); assert.equal(f.audio.listeners.size, 0); assert.equal(f.audio.src, '');
 });
 
+test('a precise UTC boundary timer starts the next track and Stop cancels it', () => {
+  const schedule = createRadioSchedule(edition()), audio = new FakeAudio(), timers = new Map();
+  let clock = schedule.epochMs + schedule.tracks[0].durationMs - 100, serial = 0;
+  const player = createRadioPlayer({ audio, schedule, now: () => clock,
+    setTimer: (fn, delay) => { timers.set(++serial, { fn, delay }); return serial; }, clearTimer: id => timers.delete(id) });
+  player.start(); assert.equal([...timers.values()][0].delay, 100);
+  const callback = [...timers.values()][0].fn;
+  clock += 100; callback();
+  assert.equal(audio.src, schedule.tracks[1].src);
+  player.stop(); assert.equal(timers.size, 0); player.dispose();
+});
+
 test('published edition has 103 unique real MP3s with matching sizes and hashes', () => {
   const manifest = JSON.parse(readFileSync(new URL('../content/radio.json', import.meta.url), 'utf8'));
   const schedule = createRadioSchedule(manifest);
