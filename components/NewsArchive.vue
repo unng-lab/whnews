@@ -6,7 +6,7 @@ const selection = computed(() => {
   try { return pageSlice(stories, props.page); }
   catch { throw createError({ statusCode: 404, statusMessage: 'Страница хроник не найдена' }); }
 });
-useHead({ title: computed(() => props.home ? 'WHNEWS — хроники далёкого будущего' : `Архив хроник · ${props.page} — WHNEWS`) });
+useHead({ title: computed(() => props.home ? 'Life is Better — хроники далёкого будущего' : `Архив хроник · ${props.page} — Life is Better`) });
 </script>
 
 <template>

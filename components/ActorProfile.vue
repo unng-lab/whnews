@@ -12,9 +12,9 @@ const selection = computed(() => {
   try { return pageSlice(actorNews(stories, props.id), props.page); }
   catch { throw createError({ statusCode: 404, statusMessage: 'Страница подборки не найдена' }); }
 });
-useHead({ title: computed(() => `${person.value?.name ?? 'Персонаж'} — WHNEWS`) });
+useHead({ title: computed(() => `${person.value?.name ?? 'Персонаж'} — Life is Better`) });
 </script>
 
 <template>
-  <div v-if="person" class="profile-page"><NuxtLink class="back-link" to="/actors/">← Все действующие лица</NuxtLink><header class="actor-profile"><img v-if="person.image" :src="person.image" :alt="person.name" width="360" height="450"><div v-else class="portrait-pending">Портрет пока не добавлен</div><div><p class="eyebrow">Личное дело / вымышленный персонаж</p><h1>{{ person.name }}</h1><p class="profile-biography">{{ person.description }}</p><p class="profile-note">Художественный образ из мира WHNEWS.</p></div></header><section class="profile-chronicles"><div class="section-heading"><h2>Хроники с участием персонажа</h2><span class="edition-label">{{ selection.totalItems }} записей</span></div><NewsFeed :news="selection.items" :actors="people" /><SitePagination :page="selection" :base="actorHref(person.id)" label="Страницы подборки персонажа" /></section></div>
+  <div v-if="person" class="profile-page"><NuxtLink class="back-link" to="/actors/">← Все действующие лица</NuxtLink><header class="actor-profile"><img v-if="person.image" :src="person.image" :alt="person.name" width="360" height="450"><div v-else class="portrait-pending">Портрет пока не добавлен</div><div><p class="eyebrow">Личное дело / вымышленный персонаж</p><h1>{{ person.name }}</h1><p class="profile-biography">{{ person.description }}</p><p class="profile-note">Художественный образ из мира Life is Better.</p></div></header><section class="profile-chronicles"><div class="section-heading"><h2>Хроники с участием персонажа</h2><span class="edition-label">{{ selection.totalItems }} записей</span></div><NewsFeed :news="selection.items" :actors="people" /><SitePagination :page="selection" :base="actorHref(person.id)" label="Страницы подборки персонажа" /></section></div>
 </template>

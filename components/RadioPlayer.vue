@@ -1,8 +1,8 @@
 <template>
-  <section class="radio-panel" aria-label="Варп-радио WHNEWS">
+  <section class="radio-panel" aria-label="Варп-радио Life is Better">
     <div class="radio-heading">
       <span class="eyebrow"><span class="radio-light" :class="{ 'is-playing': state.playing }" aria-hidden="true"></span>Варп-эфир</span>
-      <span class="radio-edition">{{ manifest.tracks.length }} песни · ведущие А и Б</span>
+      <span class="radio-edition">{{ manifest.tracks.length }} песни · {{ hostNames }}</span>
     </div>
     <div class="radio-controls">
       <button class="radio-toggle" type="button" :disabled="!ready" :aria-pressed="state.wanted" @click="toggle">
@@ -31,6 +31,7 @@
       <p v-if="state.slot">Далее: {{ state.slot.nextTrack.title }}</p><p v-else>Музыкальный сигнал из сорок первого тысячелетия.</p>
       <span>Фанатский эфир · голоса создаются на устройстве</span>
     </div>
+    <RadioHosts />
     <noscript>Для прослушивания радио включите JavaScript.</noscript>
   </section>
 </template>
@@ -38,12 +39,14 @@
 <script setup>
 import { computed, onMounted, onBeforeUnmount, ref, shallowRef } from 'vue';
 import manifest from '~/content/radio.json';
+import hosts from '~/content/radio-hosts.json';
 import { radioAudioUrl, radioTime } from '~/utils/radio-schedule.mjs';
 import { createRadioPlayer } from '~/utils/radio-player.mjs';
 import { createLiveRadioSchedule, fetchRadioProgram } from '~/utils/radio-program.mjs';
 import { createSpeechEngine, validateVoiceRuntime } from '~/utils/radio-speech.mjs';
 
 const baseURL = useRuntimeConfig().app.baseURL;
+const hostNames = hosts.map(host => host.name).join(' и ');
 const ready = ref(false), volume = ref(50);
 const state = shallowRef({ wanted: false, playing: false, loading: false, error: '', slot: null });
 const voiceStatus = shallowRef({ phase: 'idle', message: '' });

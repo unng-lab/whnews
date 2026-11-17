@@ -22,7 +22,7 @@ watch(query, (value, previous) => {
   }
 }, { flush: 'sync' });
 watch(() => [props.page, props.kind], () => { query.value = ''; searchPage.value = 1; pageOverride.value = null; });
-useHead({ title: computed(() => `${title.value} — WHNEWS`) });
+useHead({ title: computed(() => `${title.value} — Life is Better`) });
 </script>
 
 <template>

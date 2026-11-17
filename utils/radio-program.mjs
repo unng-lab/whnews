@@ -1,4 +1,5 @@
 import { createRadioSchedule } from './radio-schedule.mjs';
+import hosts from '../content/radio-hosts.json' with { type: 'json' };
 import voiceConfig from '../public/radio/voice/config-39f1af520ca4.json' with { type: 'json' };
 
 const WINDOW = 90000, DAY = 86400000;
@@ -76,7 +77,7 @@ export function createLiveRadioSchedule(music) {
     const ordinal = cycle * grid.tracks.length + trackIndex;
     const script = available.length ? available[((ordinal % available.length) + available.length) % available.length] : null;
     return { id: `speech-${startMs}-${script?.id ?? 'interlude'}`, kind: 'dialogue', title: script?.title ?? 'Музыкальная интерлюдия',
-      genre: script ? 'Разговор ведущих А и Б' : 'Варп-эфир', durationMs: WINDOW, src: program.fallbackSrc,
+      genre: script ? `Ведущие: ${hosts.map(host => host.name).join(' и ')}` : 'Варп-эфир', durationMs: WINDOW, src: program.fallbackSrc,
       sourceHref: script?.sourceHref ?? null, script, modelRevision: program.modelRevision, startMs };
   }
   function rawSlot(now) {
