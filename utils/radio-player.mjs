@@ -1,11 +1,12 @@
 // Audio transport is injected so clock changes, buffering and play races can be tested without a browser.
-export function createRadioPlayer({ audio, schedule, now = Date.now, resolveUrl = track => track.src, onChange = () => {} }) {
+export function createRadioPlayer({ audio, schedule, now = Date.now, resolveUrl = track => track.src, onChange = () => {}, setTimer = setTimeout, clearTimer = clearTimeout }) {
   const state = { wanted: false, playing: false, loading: false, error: '', slot: schedule.atUtc(now()) };
-  let loadedId = null, loadedSource = null, generation = 0, pending = null, disposed = false;
+  let loadedId = null, loadedSource = null, generation = 0, pending = null, disposed = false, boundaryTimer = null;
   audio.preload = 'none';
   const emit = () => { if (!disposed) onChange({ ...state }); };
   function fail(message) {
     state.wanted = false; state.playing = false; state.loading = false; state.error = message;
+    clearTimer(boundaryTimer); boundaryTimer = null;
     generation++; pending = null; loadedId = null; audio.pause(); emit();
   }
   function play() {
@@ -31,7 +32,10 @@ export function createRadioPlayer({ audio, schedule, now = Date.now, resolveUrl 
   function tick(force = false) {
     if (disposed) return;
     state.slot = schedule.atUtc(now());
+    clearTimer(boundaryTimer); boundaryTimer = null;
     if (state.wanted) {
+      boundaryTimer = setTimer(() => tick(true), Math.max(1, state.slot.remainingMs));
+      boundaryTimer?.unref?.();
       const source = resolveUrl(state.slot.track);
       if (loadedId !== state.slot.track.id || loadedSource !== source) {
         generation++; pending = null; loadedId = state.slot.track.id; loadedSource = source;
@@ -59,6 +63,7 @@ export function createRadioPlayer({ audio, schedule, now = Date.now, resolveUrl 
   };
   for (const [name, listener] of Object.entries(events)) audio.addEventListener(name, listener);
   function stop() {
+    clearTimer(boundaryTimer); boundaryTimer = null;
     generation++; pending = null; state.wanted = false; state.playing = false; state.loading = false;
     audio.pause(); audio.removeAttribute('src'); loadedId = null; loadedSource = null; audio.load(); emit();
   }

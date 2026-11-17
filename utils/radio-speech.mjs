@@ -39,7 +39,7 @@ export function createSpeechEngine({ runtime, resolveUrl, workerFactory, onStatu
         if (!busy || data.id !== busy.id) { if (data.type === 'error' && data.id === undefined) failure(); return; }
         clearTimer(timer);
         const entry = busy; busy = null;
-        if (data.type === 'done' && data.durationMs === 90000 && data.wav instanceof ArrayBuffer) {
+        if (data.type === 'done' && data.durationMs === (entry.track.script.durationMs ?? 90000) && data.wav instanceof ArrayBuffer) {
           if (entries.get(entry.key) === entry) { entry.url = createUrl(data.wav); entry.metrics = { generationMs: data.generationMs, speechSeconds: data.speechSeconds }; onReady(entry.track); }
         } else { entry.error = true; report('error', 'Этот разговор недоступен. Музыкальный эфир продолжается.'); }
         pump();
