@@ -1,1 +1,0 @@
-import{_ as r}from"./BrokdVMv.js";import{_ as t,e,o as c}from"./fC3Vt6Pe.js";import"./CTIDvc_s.js";import"./B7fVEuVK.js";import"./Br9ZKNSU.js";import"./DtmVKb7d.js";const n={};function s(_,i){const o=r;return c(),e(o,{kind:"systems"})}const x=t(n,[["render",s]]);export{x as default};
