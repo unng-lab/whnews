@@ -1,1 +1,0 @@
-import{_ as r}from"./FUFiDiw1.js";import{_ as c,e,o as t}from"./Df0_cel8.js";import"./DaX_swWB.js";import"./CEItD2We.js";const n={};function _(s,a){const o=r;return t(),e(o,{kind:"worlds"})}const d=c(n,[["render",_]]);export{d as default};
