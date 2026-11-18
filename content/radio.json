@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "stationId": "whnews-warp-2026-11-xl-v1-140",
+  "stationId": "whnews-warp-2026-11-xl-v1-160",
   "epochUtc": "2026-11-17T00:00:00Z",
   "shuffleSeed": "whnews-warp-2026-11-xl-v1",
   "tracks": [
@@ -1263,7 +1263,187 @@
       "durationMs": 180000,
       "bytes": 4321274,
       "sha256": "4cfc6ddc3c9a7dcd518cdf6328f7ad0d3990364b37ac7d6d3bead3a5f047c603"
+    },
+    {
+      "id": "xl-141",
+      "title": "Просроченный отпуск — гудок тяжёлых кранов",
+      "genre": "post-rock with ebow guitars and slowly building percussion",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/141.mp3",
+      "durationMs": 150000,
+      "bytes": 3601289,
+      "sha256": "bbe6e8438a7627593d0cb4911d36d6fde8bd22886d0b3a9ca17eadb8953f9c3c"
+    },
+    {
+      "id": "xl-142",
+      "title": "Два коротких сигнала — пепел на оперенье",
+      "genre": "dirty blues-rock with slide guitar and resonator",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/142.mp3",
+      "durationMs": 180000,
+      "bytes": 4321284,
+      "sha256": "c143f534a4620bf225774a578730ace419f50016476c1853888d8483cfcf843e"
+    },
+    {
+      "id": "xl-143",
+      "title": "Запасной канал — траншея под луной",
+      "genre": "gothic metal with pipe organ and layered distorted strings",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/143.mp3",
+      "durationMs": 150000,
+      "bytes": 3601273,
+      "sha256": "414445d0ba6ac31d4e841933da5e3608b643d70bf3481780c9b27c742c8e7390"
+    },
+    {
+      "id": "xl-144",
+      "title": "Старый ключ — край сферы",
+      "genre": "bluegrass-in-space with dulcimer, brushed snare and plucked bass",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/144.mp3",
+      "durationMs": 150000,
+      "bytes": 3601254,
+      "sha256": "e8658422660f857f321e5cde921e1643c7b715669c8124ec4501ccc4055d417a"
+    },
+    {
+      "id": "xl-145",
+      "title": "Чужая звезда — стекло обсерватории",
+      "genre": "operatic darkwave with harpsichord and synthesizer bass",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/145.mp3",
+      "durationMs": 150000,
+      "bytes": 3601274,
+      "sha256": "60a4a239e1825e6db6d7e280ea49d557323f9154aa7049adcea146441803bd72"
+    },
+    {
+      "id": "xl-146",
+      "title": "Снег на плече — бережёный горн",
+      "genre": "alt rock with foggy reverb and tambourine",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/146.mp3",
+      "durationMs": 165000,
+      "bytes": 3961265,
+      "sha256": "62ae1f9b40601fb44465181334e3f697cbbf30f1f1d88109176874b33d1c4620"
+    },
+    {
+      "id": "xl-147",
+      "title": "Свет на лестнице — зелёный саркофаг",
+      "genre": "cinematic folk with bowed lyre and frame drum",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/147.mp3",
+      "durationMs": 180000,
+      "bytes": 4321275,
+      "sha256": "6e87960e650ff46563ec8e40ede38c326018c3f815b1e9f5aa598e648957d2c5"
+    },
+    {
+      "id": "xl-148",
+      "title": "Дальний причал — мотор из грохота",
+      "genre": "industrial EBM with motor percussion and metallic gated bass",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/148.mp3",
+      "durationMs": 165000,
+      "bytes": 3961271,
+      "sha256": "6d8a69cf5a7324bfb73e87d72af1754a00890d06294a2421f68235ae08d4a28a"
+    },
+    {
+      "id": "xl-149",
+      "title": "Молоко у порога — хор медных рёбер",
+      "genre": "gothic metal with pipe organ and layered distorted strings",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/149.mp3",
+      "durationMs": 165000,
+      "bytes": 3961272,
+      "sha256": "44e28e431f23cdb34d0b775979953b809d9c60ef5fe7f43c51c0797d43b1275c"
+    },
+    {
+      "id": "xl-150",
+      "title": "Родня по слуху — голоса сирот",
+      "genre": "slow trip-hop with live upright bass and dusty breakbeats",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/150.mp3",
+      "durationMs": 180000,
+      "bytes": 4321263,
+      "sha256": "b70150883dc1884f8d0aa41409d6da30e8084b5368c66f84fe4d39f1ce41513a"
+    },
+    {
+      "id": "xl-151",
+      "title": "Два коротких сигнала — мотор из грохота",
+      "genre": "chamber waltz with violin quartet and piano",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/151.mp3",
+      "durationMs": 150000,
+      "bytes": 3601282,
+      "sha256": "91cb740e1665399e02a330177b629a47b5a54d3b7f65a90f795e167f3fc2cb45"
+    },
+    {
+      "id": "xl-152",
+      "title": "Письмо без числа — бережёный горн",
+      "genre": "orchestral march with snare and funeral brass",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/152.mp3",
+      "durationMs": 165000,
+      "bytes": 3961271,
+      "sha256": "8e9f336c56fd4a5c1fa6ca7264ef9598ec9a38b3efc3ee6800ebfa31cf7084ef"
+    },
+    {
+      "id": "xl-153",
+      "title": "Последний напев — пепел на оперенье",
+      "genre": "Russian post-punk with chorus guitar and dry baritone",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/153.mp3",
+      "durationMs": 150000,
+      "bytes": 3601275,
+      "sha256": "90b88f06dd024bc4dcac0b0f391cf8e2a69a7b60542881905a7602708a6cb9bf"
+    },
+    {
+      "id": "xl-154",
+      "title": "Дальний причал — память трона",
+      "genre": "progressive rock with Hammond organ and changing textures",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/154.mp3",
+      "durationMs": 150000,
+      "bytes": 3601264,
+      "sha256": "645bb4f2e0a83e764684b3e9e79f1120202cd03ef8280a2dec5e4455a5ce0b58"
+    },
+    {
+      "id": "xl-155",
+      "title": "Место у окна — забрала погашены",
+      "genre": "Russian post-punk with chorus guitar and dry baritone",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/155.mp3",
+      "durationMs": 180000,
+      "bytes": 4321267,
+      "sha256": "d86d5e8800f1d6eaa48da613bdba87d436bf5c73c0a537e25e5c7a3080d5a4ab"
+    },
+    {
+      "id": "xl-156",
+      "title": "Чужая звезда — сад астропатов",
+      "genre": "alt rock with foggy reverb and tambourine",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/156.mp3",
+      "durationMs": 180000,
+      "bytes": 4321264,
+      "sha256": "07576dcdfef03a9e918dee8098b39c15b84a29fdfc51cb5c47da97beb729a296"
+    },
+    {
+      "id": "xl-157",
+      "title": "Письмо без числа — иней на витражах",
+      "genre": "cinematic folk with bowed lyre and frame drum",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/157.mp3",
+      "durationMs": 165000,
+      "bytes": 3961274,
+      "sha256": "54a0ddd2ab629d933bda0b323b743d9c87aca66accf2b1b7c9093c7bd34a397c"
+    },
+    {
+      "id": "xl-158",
+      "title": "Запасной канал — стекло обсерватории",
+      "genre": "gothic drum and bass with cathedral pads and chopped acoustic break",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/158.mp3",
+      "durationMs": 165000,
+      "bytes": 3961278,
+      "sha256": "0c9becaba0f1fcb3f3bb39e430ef22e5d47416af022d9235ee16e02957a3e546"
+    },
+    {
+      "id": "xl-159",
+      "title": "Два коротких сигнала — зёрна на ладонях",
+      "genre": "hard techno with mechanical percussion and low choir",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/159.mp3",
+      "durationMs": 180000,
+      "bytes": 4321282,
+      "sha256": "0448b3cb718a070acc309dac7d7b5f0e6e5de259f6e5ddd721f4f8ab589967a2"
+    },
+    {
+      "id": "xl-160",
+      "title": "Место у окна — иней на витражах",
+      "genre": "dark synthwave with arpeggios and analog toms",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/160.mp3",
+      "durationMs": 150000,
+      "bytes": 3601266,
+      "sha256": "3195b614e24e35cffbf38f5f3e9e08ed15d146cd924c28e8ba4dd175d06641bf"
     }
   ],
-  "programCatalogId": "whnews-warp-2026-11-xl-v1-140"
+  "programCatalogId": "whnews-warp-2026-11-xl-v1-160"
 }

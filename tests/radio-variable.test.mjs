@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { createLiveRadioSchedule, dialogueSamples } from '../utils/radio-program.mjs';
+import { createCatalogRadioSchedule, createLiveRadioSchedule, dialogueSamples } from '../utils/radio-program.mjs';
 import { buildDialogueWave } from '../utils/radio-dsp.mjs';
 const sha = n => n.repeat(64), epoch = Date.parse('2026-11-17T00:00:00Z'), iso = ms => new Date(ms).toISOString();
 const music = { schemaVersion: 1, epochUtc: iso(epoch), shuffleSeed: 'fixed', tracks: [
@@ -49,7 +49,11 @@ test('future banks activate at song boundaries without interrupting a conversati
 });
 test('appending songs preserves the published conversation and next full song', () => {
   const { s: old, program: oldProgram, first } = fixture();
-  const boundary = epoch + first + script('a').durationMs;
+  const pendingAt = epoch + first + script('a').durationMs;
+  const pendingTrack = old.atUtc(pendingAt).track;
+  oldProgram.banks.push({ ...oldProgram.banks[0], id: sha('2'), effectiveAtUtc: iso(pendingAt), startIndex: 1 });
+  old.update(oldProgram);
+  const boundary = pendingAt + pendingTrack.durationMs + script('a').durationMs;
   const track = old.atUtc(boundary).track;
   const expanded = { ...music, programCatalogId: 'expanded', tracks: [...music.tracks,
     { id: 'c', title: 'Music C', src: '/radio/tracks/c.mp3', durationMs: 30000 },
@@ -57,7 +61,9 @@ test('appending songs preserves the published conversation and next full song', 
   const listener = createLiveRadioSchedule(expanded);
   const index = listener.tracks.findIndex(t => t.id === track.id);
   const next = structuredClone(oldProgram);
+  next.banks = next.banks.slice(0, 1);
   next.catalogId = expanded.programCatalogId;
+  next.catalog = expanded;
   next.previousEdition = { music, program: oldProgram };
   next.transitionAtUtc = iso(boundary);
   next.legacyProgram.epochUtc = iso(boundary);
@@ -72,12 +78,47 @@ test('appending songs preserves the published conversation and next full song', 
   const nested = structuredClone(next);
   nested.previousEdition.program.previousEdition = next.previousEdition;
   assert.throws(() => listener.update(nested), /Incompatible previous radio edition/);
+  const badCutover = structuredClone(next);
+  badCutover.banks[0].effectiveAtUtc = next.transitionAtUtc.replace('Z', '0Z');
+  badCutover.banks[0].startIndex = (index + 1) % expanded.tracks.length;
+  assert.throws(() => listener.update(badCutover), /Migration must preserve the next full song/);
+  badCutover.banks[0].effectiveAtUtc = iso(boundary + 1000);
+  assert.throws(() => listener.update(badCutover), /Catalog must begin at the published transition/);
   listener.update(next);
   assert.deepEqual(listener.atUtc(boundary - 1), old.atUtc(boundary - 1));
   assert.deepEqual(listener.speechSlots(boundary - 1), old.speechSlots(boundary - 1));
   assert.equal(listener.atUtc(boundary).track.id, track.id);
   assert.equal(listener.atUtc(boundary).positionMs, 0);
   assert.equal(listener.atUtc(boundary + track.durationMs).kind, 'dialogue');
+
+  const openTab = createCatalogRadioSchedule(music, () => pendingAt - 1);
+  openTab.update(oldProgram);
+  const changedPrefix = structuredClone(next);
+  changedPrefix.catalog.tracks[0].src = '/radio/tracks/another.mp3';
+  assert.throws(() => openTab.update(changedPrefix), /Incompatible radio catalog update/);
+  assert.deepEqual(openTab.music, music);
+  const changedDialogue = structuredClone(next);
+  changedDialogue.previousEdition.program.banks[0].dialogues[0].id = sha('e');
+  assert.throws(() => openTab.update(changedDialogue), /Radio bank changed in place/);
+  const reformatted = structuredClone(changedDialogue);
+  reformatted.previousEdition.program.banks[0].effectiveAtUtc = iso(epoch).replace('Z', '0Z');
+  assert.throws(() => openTab.update(reformatted), /Radio bank changed in place/);
+  const omitted = structuredClone(next);
+  omitted.previousEdition.program.banks.shift();
+  assert.throws(() => openTab.update(omitted), /changes a current or scheduled edition/);
+  assert.deepEqual(openTab.atUtc(boundary - 1), old.atUtc(boundary - 1));
+  const laterTab = createCatalogRadioSchedule(music, () => pendingAt + 1);
+  laterTab.update(oldProgram);
+  laterTab.update(omitted);
+  assert.deepEqual(laterTab.atUtc(pendingAt + 1), old.atUtc(pendingAt + 1));
+  openTab.update(next);
+  assert.deepEqual(openTab.music, expanded);
+  for (const t of [boundary - 1, boundary, boundary + track.durationMs + 5000]) {
+    assert.deepEqual(openTab.atUtc(t), listener.atUtc(t));
+    assert.deepEqual(openTab.speechSlots(t), listener.speechSlots(t));
+  }
+  assert.throws(() => openTab.update(oldProgram), /Radio catalog differs/);
+  assert.deepEqual(openTab.music, expanded);
 
   const broken = structuredClone(next);
   broken.transitionAtUtc = broken.legacyProgram.epochUtc = broken.banks[0].effectiveAtUtc = iso(boundary + 1);

@@ -134,7 +134,7 @@ test('a precise UTC boundary timer starts the next track and Stop cancels it', (
 test('published music points to ordered S3 objects and retains the old MP3 files', () => {
   const manifest = JSON.parse(readFileSync(new URL('../content/radio.json', import.meta.url), 'utf8'));
   const schedule = createRadioSchedule(manifest);
-  assert.equal(schedule.tracks.length, 140);
+  assert.equal(schedule.tracks.length, 160);
   for (const [index, track] of manifest.tracks.entries()) {
     const number = String(index + 1).padStart(3, '0');
     assert.equal(track.id, `xl-${number}`);
@@ -142,7 +142,7 @@ test('published music points to ordered S3 objects and retains the old MP3 files
     assert.match(track.sha256, /^[a-f0-9]{64}$/);
     assert.ok(Number.isSafeInteger(track.bytes) && track.bytes > 0);
   }
-  assert.equal(new Set(manifest.tracks.map(track => track.sha256)).size, 140);
+  assert.equal(new Set(manifest.tracks.map(track => track.sha256)).size, 160);
   const oldAudio = readdirSync(new URL('../public/radio/tracks/', import.meta.url));
   assert.equal(oldAudio.filter(file => file.endsWith('.mp3')).length, 103);
 });

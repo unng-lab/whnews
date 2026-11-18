@@ -2,6 +2,7 @@ import { lstatSync, readFileSync, readdirSync, realpathSync } from 'node:fs';
 import { dirname, extname, isAbsolute, join, relative, resolve, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createHash } from 'node:crypto';
+import { isDeepStrictEqual } from 'node:util';
 import { parse, walkSync, ELEMENT_NODE } from 'ultrahtml';
 import { staticRoutes } from '../utils/catalog.mjs';
 import { validateRadioProgram } from '../utils/radio-program.mjs';
@@ -94,6 +95,7 @@ export function validateStatic({ catalog, output }) {
     const root = resolve(output), read = path => JSON.parse(readFileSync(join(root, path), 'utf8'));
     const music = JSON.parse(readFileSync(new URL('../content/radio.json', import.meta.url), 'utf8'));
     const program = validateRadioProgram(read('radio/program.json'), music);
+    if (program.catalog !== undefined) check(isDeepStrictEqual(program.catalog, music), 'Radio program embeds a different catalog');
     const runtime = validateVoiceRuntime(read('radio/voice/runtime-v1.json'));
     check(program.modelRevision === runtime.model.sha256 && program.fallbackSrc === runtime.fallbackSrc, 'Radio runtime edition differs');
     for (const entry of [runtime.model, runtime.config]) {

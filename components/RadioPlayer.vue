@@ -2,7 +2,7 @@
   <section class="radio-panel" aria-label="Варп-радио Life is Better">
     <div class="radio-heading">
       <span class="eyebrow"><span class="radio-light" :class="{ 'is-playing': state.playing }" aria-hidden="true"></span>Варп-эфир</span>
-      <span class="radio-edition">{{ manifest.tracks.length }} песни · {{ hostNames }}</span>
+      <span class="radio-edition">{{ catalog.tracks.length }} песни · {{ hostNames }}</span>
     </div>
     <div class="radio-controls">
       <button class="radio-toggle" type="button" :disabled="!ready" :aria-pressed="state.wanted" @click="toggle">
@@ -41,7 +41,7 @@
       <p v-if="previewError" class="radio-error" role="status">{{ previewError }}</p>
     </div>
     <details class="radio-library" @toggle="libraryOpen = $event.target.open">
-      <summary>Список треков ({{ manifest.tracks.length }})</summary>
+      <summary>Список треков ({{ catalog.tracks.length }})</summary>
       <div v-if="libraryOpen">
         <label class="radio-search">
           Поиск по названию и жанру
@@ -73,7 +73,7 @@ import manifest from '~/content/radio.json';
 import hosts from '~/content/radio-hosts.json';
 import { radioAudioUrl, radioTime } from '~/utils/radio-schedule.mjs';
 import { createRadioPlayer } from '~/utils/radio-player.mjs';
-import { createLiveRadioSchedule, fetchRadioProgram } from '~/utils/radio-program.mjs';
+import { createCatalogRadioSchedule, fetchRadioProgram } from '~/utils/radio-program.mjs';
 import { createSpeechEngine, validateVoiceRuntime } from '~/utils/radio-speech.mjs';
 
 const baseURL = useRuntimeConfig().app.baseURL;
@@ -81,11 +81,12 @@ const hostNames = hosts.map(host => host.name).join(' и ');
 const ready = ref(false), volume = ref(50);
 const pageSize = 30;
 const libraryOpen = ref(false), trackPage = ref(0), query = ref('');
+const catalog = shallowRef(manifest);
 const preview = ref(null), previewTrack = shallowRef(null), previewError = ref('');
 const filteredTracks = computed(() => {
   const term = query.value.toLocaleLowerCase('ru');
-  if (!term) return manifest.tracks;
-  return manifest.tracks.filter(track => `${track.title} ${track.genre ?? ''}`.toLocaleLowerCase('ru').includes(term));
+  if (!term) return catalog.value.tracks;
+  return catalog.value.tracks.filter(track => `${track.title} ${track.genre ?? ''}`.toLocaleLowerCase('ru').includes(term));
 });
 const pageCount = computed(() => Math.ceil(filteredTracks.value.length / pageSize));
 const pageTracks = computed(() => {
@@ -94,7 +95,7 @@ const pageTracks = computed(() => {
 });
 const state = shallowRef({ wanted: false, playing: false, loading: false, error: '', slot: null });
 const voiceStatus = shallowRef({ phase: 'idle', message: '' });
-const schedule = createLiveRadioSchedule(manifest);
+const schedule = createCatalogRadioSchedule(manifest);
 let player, timer, poll, speech, runtime, request, disposed = false;
 const asset = path => radioAudioUrl(baseURL, path);
 const speechReady = computed(() => state.value.slot?.kind === 'dialogue' && !!speech?.urlFor(state.value.slot.track));
@@ -112,7 +113,9 @@ async function refreshProgram() {
     if (runtimeResult.status === 'fulfilled') runtime = runtimeResult.value;
     if (programResult.status === 'fulfilled') {
       if (runtime && runtime.model.sha256 !== programResult.value.modelRevision) throw new Error('Incompatible voice edition');
-      schedule.update(programResult.value); player?.tick(true);
+      schedule.update(programResult.value);
+      catalog.value = schedule.music;
+      player?.tick(true);
     }
   } catch { /* Retain the last validated static program. */ }
   finally { clearTimeout(timeout); if (request === controller) request = null; }

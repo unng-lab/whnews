@@ -56,6 +56,7 @@ export function validateRadioProgram(program, music) {
   validateV2(program.legacyProgram, music);
   valid(program.modelRevision === program.legacyProgram.modelRevision && program.fallbackSrc === program.legacyProgram.fallbackSrc, 'Incompatible radio model');
   valid(Array.isArray(program.banks) && program.banks.length >= 1 && program.banks.length <= 18, 'Invalid editions');
+  const cutoff = Date.parse(program.transitionAtUtc);
   const ordered = createRadioSchedule(music).tracks;
   let previous = null;
   for (const bank of program.banks) {
@@ -70,10 +71,11 @@ export function validateRadioProgram(program, music) {
     // Always validate the station script, including when twelve news scripts exist.
     skeleton.banks[0].dialogues = [proxy]; validateV2(skeleton, music);
     for (const d of [...bank.dialogues, station]) validateTiming(d);
-    valid(Date.parse(bank.effectiveAtUtc) >= Date.parse(program.transitionAtUtc), 'Edition before migration');
-    if (bank.effectiveAtUtc === program.transitionAtUtc) {
+    const startsAt = Date.parse(bank.effectiveAtUtc);
+    valid(startsAt >= cutoff, 'Edition before migration');
+    if (startsAt === cutoff) {
       const old = createV2(music); old.update(program.legacyProgram);
-      const slot = old.atUtc(Date.parse(bank.effectiveAtUtc));
+      const slot = old.atUtc(startsAt);
       valid(slot.kind === 'music' && slot.positionMs === 0 && slot.track.id === ordered[bank.startIndex].id, 'Migration must preserve the next full song');
     }
     if (previous) {
@@ -85,7 +87,10 @@ export function validateRadioProgram(program, music) {
     previous = bank;
   }
   if (program.previousEdition !== undefined) {
-    const edition = program.previousEdition, cutoff = Date.parse(program.transitionAtUtc);
+    const edition = program.previousEdition;
+    if (program.banks.length === 1 || cutoff >= Date.now()) {
+      valid(Date.parse(program.banks[0].effectiveAtUtc) === cutoff, 'Catalog must begin at the published transition');
+    }
     valid(edition?.music && edition.program?.schemaVersion === 3 && edition.program.previousEdition === undefined &&
       edition.program.modelRevision === program.modelRevision && edition.program.fallbackSrc === program.fallbackSrc,
     'Incompatible previous radio edition');
@@ -111,7 +116,7 @@ export function createLiveRadioSchedule(music) {
       valid(next.transitionAtUtc === program.transitionAtUtc && next.modelRevision === program.modelRevision && next.fallbackSrc === program.fallbackSrc && JSON.stringify(next.legacyProgram) === JSON.stringify(program.legacyProgram) && JSON.stringify(next.previousEdition) === JSON.stringify(program.previousEdition), 'Radio base changed');
       valid(Date.parse(next.banks.at(-1).effectiveAtUtc) >= Date.parse(program.banks.at(-1).effectiveAtUtc), 'Radio bank rollback');
       for (const b of next.banks) {
-        const old = program.banks.find(p => p.effectiveAtUtc === b.effectiveAtUtc);
+        const old = program.banks.find(p => Date.parse(p.effectiveAtUtc) === Date.parse(b.effectiveAtUtc));
         valid(!old || JSON.stringify(old) === JSON.stringify(b), 'Radio bank changed in place');
       }
     }
