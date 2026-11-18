@@ -39,7 +39,18 @@ function validateTiming(d) {
   }
   valid(d.sampleCount === dialogueSamples(d.turns) && d.durationMs === Math.ceil(d.sampleCount / 24) && d.durationMs >= 1000 && d.durationMs <= 88000, 'Invalid speech duration');
 }
+function previousSchedule(edition) {
+  const { programCatalogId, ...music } = edition.music;
+  if (programCatalogId !== undefined) valid(edition.program.catalogId === programCatalogId, 'Previous radio catalog differs');
+  const schedule = createLiveRadioSchedule(music);
+  schedule.update(edition.program);
+  return schedule;
+}
 export function validateRadioProgram(program, music) {
+  if (music.programCatalogId !== undefined) {
+    valid(program?.catalogId === music.programCatalogId, 'Radio catalog differs');
+    valid(program.schemaVersion === 3 && program.previousEdition, 'Missing previous radio edition');
+  }
   if (program?.schemaVersion === 2) return validateV2(program, music);
   valid(program?.schemaVersion === 3 && time(program.transitionAtUtc) && hash(program.modelRevision) && /^\/radio\/interlude-[a-f0-9]+\.mp3$/.test(program.fallbackSrc), 'Invalid variable radio program');
   validateV2(program.legacyProgram, music);
@@ -73,26 +84,43 @@ export function validateRadioProgram(program, music) {
     }
     previous = bank;
   }
+  if (program.previousEdition !== undefined) {
+    const edition = program.previousEdition, cutoff = Date.parse(program.transitionAtUtc);
+    valid(edition?.music && edition.program?.schemaVersion === 3 && edition.program.previousEdition === undefined &&
+      edition.program.modelRevision === program.modelRevision && edition.program.fallbackSrc === program.fallbackSrc,
+    'Incompatible previous radio edition');
+    const schedule = previousSchedule(edition);
+    valid(Date.parse(edition.program.banks.at(-1).effectiveAtUtc) < cutoff, 'Catalog change precedes a scheduled edition');
+    const old = schedule.atUtc(cutoff);
+    const legacy = createV2(music); legacy.update(program.legacyProgram);
+    const next = legacy.atUtc(cutoff);
+    valid(old.kind === 'music' && old.positionMs === 0 && schedule.atUtc(cutoff - 1).remainingMs === 1 &&
+      next.kind === 'music' && next.positionMs === 0 && old.track.id === next.track.id &&
+      old.track.src === next.track.src && old.track.durationMs === next.track.durationMs,
+    'Catalog change must preserve the next full song');
+  }
   return program;
 }
 export function createLiveRadioSchedule(music) {
   const legacy = createV2(music), ordered = createRadioSchedule(music).tracks;
-  let program = null;
+  let program = null, previous = null;
   function update(next) {
     validateRadioProgram(next, music);
     if (next.schemaVersion === 2) { valid(!program, 'Radio version rollback'); legacy.update(next); return; }
     if (program) {
-      valid(next.transitionAtUtc === program.transitionAtUtc && next.modelRevision === program.modelRevision && next.fallbackSrc === program.fallbackSrc && JSON.stringify(next.legacyProgram) === JSON.stringify(program.legacyProgram), 'Radio base changed');
+      valid(next.transitionAtUtc === program.transitionAtUtc && next.modelRevision === program.modelRevision && next.fallbackSrc === program.fallbackSrc && JSON.stringify(next.legacyProgram) === JSON.stringify(program.legacyProgram) && JSON.stringify(next.previousEdition) === JSON.stringify(program.previousEdition), 'Radio base changed');
       valid(Date.parse(next.banks.at(-1).effectiveAtUtc) >= Date.parse(program.banks.at(-1).effectiveAtUtc), 'Radio bank rollback');
       for (const b of next.banks) {
         const old = program.banks.find(p => p.effectiveAtUtc === b.effectiveAtUtc);
         valid(!old || JSON.stringify(old) === JSON.stringify(b), 'Radio bank changed in place');
       }
     }
+    if (!program && next.previousEdition) previous = previousSchedule(next.previousEdition);
     legacy.update(next.legacyProgram); program = structuredClone(next);
   }
   function atUtc(now) {
     valid(Number.isSafeInteger(now), 'Invalid radio time');
+    if (previous && now < Date.parse(program.transitionAtUtc)) return previous.atUtc(now);
     const bank = program?.banks.findLast(b => Date.parse(b.effectiveAtUtc) <= now);
     if (!bank) return legacy.atUtc(now);
     const grid = activeGrid(bank, ordered, now), cycle = Math.floor((now - grid.epoch) / grid.totalMs), offset = (now - grid.epoch) % grid.totalMs;
@@ -107,6 +135,7 @@ export function createLiveRadioSchedule(music) {
       positionMs: local - entry.track.durationMs, remainingMs: entry.voiceMs - (local - entry.track.durationMs), startMs: voiceStart, index };
   }
   function speechSlots(now) {
+    if (previous && now < Date.parse(program.transitionAtUtc)) return previous.speechSlots(now);
     if (!program || now < Date.parse(program.banks[0].effectiveAtUtc)) return legacy.speechSlots(now);
     const current = atUtc(now);
     if (current.kind === 'music') return [current.nextTrack];

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "stationId": "whnews-warp-2026-11-xl-v1",
+  "stationId": "whnews-warp-2026-11-xl-v1-140",
   "epochUtc": "2026-11-17T00:00:00Z",
   "shuffleSeed": "whnews-warp-2026-11-xl-v1",
   "tracks": [
@@ -1173,6 +1173,97 @@
       "durationMs": 150000,
       "bytes": 3601260,
       "sha256": "c0258b582b3898a4c4c398b7437b9518f2a736ffd81a32328676ca654d4fca2a"
+    },
+    {
+      "id": "xl-131",
+      "title": "Свет на лестнице — бережёный горн",
+      "genre": "jazz noir with muted trumpet and brushed drums",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/131.mp3",
+      "durationMs": 180000,
+      "bytes": 4321271,
+      "sha256": "a7e7001c575870d74680ef31109e59c6aefcde51aa0ad6791389d77c51df8349"
+    },
+    {
+      "id": "xl-132",
+      "title": "Молоко у порога — иней на витражах",
+      "genre": "alt rock with foggy reverb and tambourine",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/132.mp3",
+      "durationMs": 150000,
+      "bytes": 3601272,
+      "sha256": "48b8bf361c4273a19895eaaae8ea566b043cfa51b4c69a8c141db75937a39561"
+    },
+    {
+      "id": "xl-133",
+      "title": "Два коротких сигнала — воск на броне",
+      "genre": "sludge rock with asymmetric grooves and organ tones",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/133.mp3",
+      "durationMs": 150000,
+      "bytes": 3601276,
+      "sha256": "1e6d9d1c43bebf73932732cb8d98371240d00ba3380b492793dc0d8469ff5cf8"
+    },
+    {
+      "id": "xl-134",
+      "title": "Старый ключ — стекло обсерватории",
+      "genre": "chamber waltz with violin quartet and piano",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/134.mp3",
+      "durationMs": 165000,
+      "bytes": 3961272,
+      "sha256": "ef9d8c9f2d7c367ba0d3325532634d1c2f5418904ed327fa625ee4d7f83a3b24"
+    },
+    {
+      "id": "xl-135",
+      "title": "Второе имя — пепел на оперенье",
+      "genre": "chamber waltz with violin quartet and piano",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/135.mp3",
+      "durationMs": 165000,
+      "bytes": 3961265,
+      "sha256": "593eca32d46d53ad6c27afc245ef9d5a997095cd0b8c2baee04141018d8af0c7"
+    },
+    {
+      "id": "xl-136",
+      "title": "Просроченный отпуск — край сферы",
+      "genre": "chamber waltz with violin quartet and piano",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/136.mp3",
+      "durationMs": 165000,
+      "bytes": 3961270,
+      "sha256": "ceed67e0f39bf4c43103fb42bbcabbabf7d582a086ba796e7c3881b1ae546a3e"
+    },
+    {
+      "id": "xl-137",
+      "title": "Место у окна — зелёный саркофаг",
+      "genre": "gothic metal with pipe organ and layered distorted strings",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/137.mp3",
+      "durationMs": 150000,
+      "bytes": 3601267,
+      "sha256": "f56c06833c2b813d7d9a9e949f0d7f317d500f76026c525bedadfd5f842eb9a9"
+    },
+    {
+      "id": "xl-138",
+      "title": "Письмо без числа — камень памяти",
+      "genre": "electroacoustic chanson with solo accordion and string trio",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/138.mp3",
+      "durationMs": 180000,
+      "bytes": 4321269,
+      "sha256": "70de39cbb9b05e003005927fab7b1ce4e9261e77cc351e71062f1dfa0e579fb7"
+    },
+    {
+      "id": "xl-139",
+      "title": "Краденый час — камень памяти",
+      "genre": "operatic darkwave with harpsichord and synthesizer bass",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/139.mp3",
+      "durationMs": 180000,
+      "bytes": 4321262,
+      "sha256": "4ce031696e534da7ccad7b4e57e0665ded8f63389655d15f79dbd3790ac2036c"
+    },
+    {
+      "id": "xl-140",
+      "title": "Последний напев — зелёный саркофаг",
+      "genre": "hard techno with mechanical percussion and low choir",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/140.mp3",
+      "durationMs": 180000,
+      "bytes": 4321274,
+      "sha256": "4cfc6ddc3c9a7dcd518cdf6328f7ad0d3990364b37ac7d6d3bead3a5f047c603"
     }
-  ]
+  ],
+  "programCatalogId": "whnews-warp-2026-11-xl-v1-140"
 }

@@ -47,6 +47,44 @@ test('future banks activate at song boundaries without interrupting a conversati
   const bad = structuredClone(next); bad.banks[1].stationDialogue.turns[0].chunks[0].tokens[0] = 200;
   assert.throws(() => s.update(bad)); assert.deepEqual(s.program, next);
 });
+test('appending songs preserves the published conversation and next full song', () => {
+  const { s: old, program: oldProgram, first } = fixture();
+  const boundary = epoch + first + script('a').durationMs;
+  const track = old.atUtc(boundary).track;
+  const expanded = { ...music, programCatalogId: 'expanded', tracks: [...music.tracks,
+    { id: 'c', title: 'Music C', src: '/radio/tracks/c.mp3', durationMs: 30000 },
+  ] };
+  const listener = createLiveRadioSchedule(expanded);
+  const index = listener.tracks.findIndex(t => t.id === track.id);
+  const next = structuredClone(oldProgram);
+  next.catalogId = expanded.programCatalogId;
+  next.previousEdition = { music, program: oldProgram };
+  next.transitionAtUtc = iso(boundary);
+  next.legacyProgram.epochUtc = iso(boundary);
+  next.legacyProgram.startIndex = index;
+  next.legacyProgram.banks[0].effectiveAtUtc = iso(boundary + track.durationMs);
+  next.banks[0].effectiveAtUtc = iso(boundary);
+  next.banks[0].startIndex = index;
+  assert.throws(() => listener.update(oldProgram), /catalog differs/);
+  const missing = structuredClone(next);
+  delete missing.previousEdition;
+  assert.throws(() => listener.update(missing), /Missing previous radio edition/);
+  const nested = structuredClone(next);
+  nested.previousEdition.program.previousEdition = next.previousEdition;
+  assert.throws(() => listener.update(nested), /Incompatible previous radio edition/);
+  listener.update(next);
+  assert.deepEqual(listener.atUtc(boundary - 1), old.atUtc(boundary - 1));
+  assert.deepEqual(listener.speechSlots(boundary - 1), old.speechSlots(boundary - 1));
+  assert.equal(listener.atUtc(boundary).track.id, track.id);
+  assert.equal(listener.atUtc(boundary).positionMs, 0);
+  assert.equal(listener.atUtc(boundary + track.durationMs).kind, 'dialogue');
+
+  const broken = structuredClone(next);
+  broken.transitionAtUtc = broken.legacyProgram.epochUtc = broken.banks[0].effectiveAtUtc = iso(boundary + 1);
+  broken.legacyProgram.banks[0].effectiveAtUtc = iso(boundary + track.durationMs + 1);
+  assert.throws(() => listener.update(broken), /preserve the next full song/);
+  assert.deepEqual(listener.program, next);
+});
 test('variable WAV ends within 80ms of the final turn, with no 90-second padding', () => {
   const turns = Array.from({ length: 7 }, (_, i) => ({ voice: i % 2 ? 'B' : 'A', audio: Float32Array.from({ length: 24064 }, (_, n) => .1 * Math.sin(n / 10)) }));
   const count = dialogueSamples(script('a').turns), result = buildDialogueWave(turns, 24000, count);
