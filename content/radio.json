@@ -1,935 +1,1178 @@
 {
   "schemaVersion": 1,
-  "stationId": "whnews-warp-2026-11-v1",
+  "stationId": "whnews-warp-2026-11-xl-v1",
   "epochUtc": "2026-11-17T00:00:00Z",
-  "shuffleSeed": "whnews-warp-2026-11-v1",
+  "shuffleSeed": "whnews-warp-2026-11-xl-v1",
   "tracks": [
     {
-      "id": "001",
+      "id": "xl-001",
       "title": "Сто шагов до рассвета",
       "genre": "Готический метал",
-      "src": "/radio/tracks/001-6c1967608a8e.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/001.mp3",
       "durationMs": 150000,
-      "bytes": 3001080,
-      "sha256": "6c1967608a8e566e50b31210548efb4c743d5b5e9585c93815d81c3d295d613c"
+      "bytes": 3601248,
+      "sha256": "050e1d54ef335c1696be1cb25eb4cba29f3d6a708df9beb47f9c7f849a096fc9"
     },
     {
-      "id": "002",
+      "id": "xl-002",
       "title": "Письма из окопа",
       "genre": "Военный марш",
-      "src": "/radio/tracks/002-46edf257de96.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/002.mp3",
       "durationMs": 165000,
-      "bytes": 3301069,
-      "sha256": "46edf257de962b33c5956fd1930df3814a0053f37212ab174bf091cfcddae9e9"
+      "bytes": 3961237,
+      "sha256": "2b66d3bf91e5231cf7684c6143e416de4a269e0592109440e21df11cb938501e"
     },
     {
-      "id": "003",
+      "id": "xl-003",
       "title": "Последняя высота",
       "genre": "Пауэр-метал",
-      "src": "/radio/tracks/003-44d36e044712.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/003.mp3",
       "durationMs": 180000,
-      "bytes": 3601072,
-      "sha256": "44d36e044712ac6b21c3cf42c1d1d97faba850fe7908981a7b624b873e42df89"
+      "bytes": 4321240,
+      "sha256": "04f38f1b8fb20a47870981bf569e50211ab5bf10051bfe41ef6d1f4e59930f29"
     },
     {
-      "id": "004",
+      "id": "xl-004",
       "title": "Шинели под дождём",
       "genre": "Драм-н-бейс",
-      "src": "/radio/tracks/004-264ce37b97e7.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/004.mp3",
       "durationMs": 165000,
-      "bytes": 3301073,
-      "sha256": "264ce37b97e7fb09dc42813e778c289485d23768fb5dbd4b38a84958733d781a"
+      "bytes": 3961241,
+      "sha256": "0ce88a17269e7ecb48982f28071fcdb1b9f8b99e3f8e2e9fc8ffffd666e77dec"
     },
     {
-      "id": "005",
+      "id": "xl-005",
       "title": "Пока держится строй",
       "genre": "Прогрессивный рок",
-      "src": "/radio/tracks/005-d765f7589275.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/005.mp3",
       "durationMs": 150000,
-      "bytes": 3001077,
-      "sha256": "d765f7589275a925c1f77abd1365ccdcda037ab346644441d313435a111dadcb"
+      "bytes": 3601245,
+      "sha256": "97d35f3a6d4adedc159dcac8cea9cb218592d382531aa2769087eb8681936177"
     },
     {
-      "id": "006",
+      "id": "xl-006",
       "title": "Корабль без берега",
       "genre": "Симфонический рок",
-      "src": "/radio/tracks/006-f6df82641ce3.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/006.mp3",
       "durationMs": 150000,
-      "bytes": 3001075,
-      "sha256": "f6df82641ce340e4b685062be18612b7badb9ecdb36624b29ab641c6616464a9"
+      "bytes": 3601243,
+      "sha256": "4b5646e4a8f71bd6b43c9323a2df1e6847ebcc6f98aa42ab89af41408383e47c"
     },
     {
-      "id": "007",
+      "id": "xl-007",
       "title": "Красный свет на мостике",
       "genre": "Дум-метал",
-      "src": "/radio/tracks/007-0add4b6f40ab.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/007.mp3",
       "durationMs": 165000,
-      "bytes": 3301084,
-      "sha256": "0add4b6f40aba77741622c3d53b01df10e3248cc1c193de3a80b8f98a9dc5e74"
+      "bytes": 3961252,
+      "sha256": "08787e7b1a83e72e9f6eeb9ba4d4d4ce5a4769f11e8f4a88463433b8caf02640"
     },
     {
-      "id": "008",
+      "id": "xl-008",
       "title": "За кормой Терра",
       "genre": "Синтвейв",
-      "src": "/radio/tracks/008-56c475f2352c.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/008.mp3",
       "durationMs": 180000,
-      "bytes": 3601069,
-      "sha256": "56c475f2352c5d86c6d7cb529e8b1279f29a4866a52039ad51da42ea4cde1ced"
+      "bytes": 4321237,
+      "sha256": "28a526ed8a1b0ce6f53e406867ede084b5467ba37881abbb6f673b20a428764c"
     },
     {
-      "id": "009",
+      "id": "xl-009",
       "title": "Девятый отсек",
       "genre": "Космический блюз",
-      "src": "/radio/tracks/009-e557c7d199d9.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/009.mp3",
       "durationMs": 165000,
-      "bytes": 3301066,
-      "sha256": "e557c7d199d97bf46fa5827062eb913022ec98a728528e6afa7ec1c5373e8caf"
+      "bytes": 3961234,
+      "sha256": "d3ca2cec737d23238795e73be7646474ecb8787cdae17a16940b8e925b763ea0"
     },
     {
-      "id": "010",
+      "id": "xl-010",
       "title": "Имена на переборке",
       "genre": "Даркабере",
-      "src": "/radio/tracks/010-85d2b291a79a.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/010.mp3",
       "durationMs": 150000,
-      "bytes": 3001075,
-      "sha256": "85d2b291a79afd28acc0759e637b83df1d8c0c69124bdf4e878b66402fe97b87"
+      "bytes": 3601243,
+      "sha256": "a45d2e47fe8722b1f855a8c100a435ec59fe3b633c154e5d7004f8a425c7c39d"
     },
     {
-      "id": "011",
+      "id": "xl-011",
       "title": "Не открывай этот шлюз",
       "genre": "EBM",
-      "src": "/radio/tracks/011-96ee3500b0d3.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/011.mp3",
       "durationMs": 150000,
-      "bytes": 3001080,
-      "sha256": "96ee3500b0d36da8b8058383621632b31bea478137667a1ae312d0cb60f40129"
+      "bytes": 3601248,
+      "sha256": "e37a79763cc089f35cc623f52ccdac36361f189dd4e9daa9d1e6f190cfd9b8b6"
     },
     {
-      "id": "012",
+      "id": "xl-012",
       "title": "Молитва поля Геллера",
       "genre": "Трип-хоп",
-      "src": "/radio/tracks/012-00291b520c4b.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/012.mp3",
       "durationMs": 165000,
-      "bytes": 3301079,
-      "sha256": "00291b520c4bc8fb3fded34ba164eca8594bcf75d826f4ced6d4bab88a32e946"
+      "bytes": 3961247,
+      "sha256": "65ffe3e113b03354a9a2261f0929f57e8a40f3898a44d9bca7e36622c6d60810"
     },
     {
-      "id": "013",
+      "id": "xl-013",
       "title": "Сорок секунд тишины",
       "genre": "Космический фолк",
-      "src": "/radio/tracks/013-49dd3977ce07.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/013.mp3",
       "durationMs": 180000,
-      "bytes": 3601077,
-      "sha256": "49dd3977ce0777d624aff55bd2fff4e3d3b6e386b203a08c00ad7ad81fa141d9"
+      "bytes": 4321245,
+      "sha256": "b8d67bf720fdd54dd4f9e5aa403ffe89b57e1d35c40ce40c412792f6b1c844a7"
     },
     {
-      "id": "014",
+      "id": "xl-014",
       "title": "Голоса за обшивкой",
       "genre": "Построк-баллада",
-      "src": "/radio/tracks/014-2cfbd9085526.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/014.mp3",
       "durationMs": 165000,
-      "bytes": 3301075,
-      "sha256": "2cfbd90855265943847be22c816ec6af64eae2c29911badfb3fbdc589204a812"
+      "bytes": 3961243,
+      "sha256": "454a2286455633d6d77b0f63c07e4462372bd2612e0f4509b2ca2ca75228fd07"
     },
     {
-      "id": "015",
+      "id": "xl-015",
       "title": "Выход из шторма",
       "genre": "Дарквейв",
-      "src": "/radio/tracks/015-e4805dc2c951.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/015.mp3",
       "durationMs": 150000,
-      "bytes": 3001069,
-      "sha256": "e4805dc2c951443104e71e180f580c712b0013fb9c8366a3d6284726cdb266e6"
+      "bytes": 3601237,
+      "sha256": "c599f4086d0d781bd68a4014fc488a1845686ef4cdbbabb16781761dbff5928e"
     },
     {
-      "id": "016",
+      "id": "xl-016",
       "title": "Литания красного тока",
       "genre": "Постпанк",
-      "src": "/radio/tracks/016-669565d278bf.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/016.mp3",
       "durationMs": 150000,
-      "bytes": 3001081,
-      "sha256": "669565d278bfdbc2e01bb4eeea49b5da9de46be436228b2ea81bb23904028069"
+      "bytes": 3601249,
+      "sha256": "c4cc36c359103bf224c53dac273de0da7252fc9feea9a273a48372e4261422ee"
     },
     {
-      "id": "017",
+      "id": "xl-017",
       "title": "Сердце Омниссии",
       "genre": "Готический вальс",
-      "src": "/radio/tracks/017-0f43bf7503c6.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/017.mp3",
       "durationMs": 165000,
-      "bytes": 3301070,
-      "sha256": "0f43bf7503c678165e84f5aeb229462728ffbf9434280d442a0f8dc2a1040133"
+      "bytes": 3961238,
+      "sha256": "9f58f2ab2ca47e88e01d66e8e3bdb4f5aa113817e03d93a3ba0bf229af24f6bf"
     },
     {
-      "id": "018",
+      "id": "xl-018",
       "title": "Бинарный рассвет",
       "genre": "Индустриальное техно",
-      "src": "/radio/tracks/018-6861a563d7d1.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/018.mp3",
       "durationMs": 180000,
-      "bytes": 3601072,
-      "sha256": "6861a563d7d134c549039ce10eeeed8bb1003436e0ee2e3e88d6bf403b5360c5"
+      "bytes": 4321240,
+      "sha256": "16305bd08dd6a7e65fb374c2297b41b7dcff883c847c039040fd307bb974812d"
     },
     {
-      "id": "019",
+      "id": "xl-019",
       "title": "Память в меди",
       "genre": "Индустриальный метал",
-      "src": "/radio/tracks/019-ccc44a42273e.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/019.mp3",
       "durationMs": 165000,
-      "bytes": 3301065,
-      "sha256": "ccc44a42273ef2c5f6fcae14e1444b30ae467d505df4b630d4a9721d5eae1f10"
+      "bytes": 3961233,
+      "sha256": "4215f16b563c68b17961ca2c2e26ef7f1a5f566aff6f31141a2b177884dec5ab"
     },
     {
-      "id": "020",
+      "id": "xl-020",
       "title": "Псалом ремонтной смены",
       "genre": "Соборный хорал",
-      "src": "/radio/tracks/020-1e45cf348b34.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/020.mp3",
       "durationMs": 150000,
-      "bytes": 3001083,
-      "sha256": "1e45cf348b34a2f8ea8bcabb97ea9fe62fe8bb255b96342ee9c9bd8cd13d4653"
+      "bytes": 3601251,
+      "sha256": "55c84578c39d133824f039d2dcff0ba3b9878ded8adaf2e211c61c03bc96d07f"
     },
     {
-      "id": "021",
+      "id": "xl-021",
       "title": "Ошибка: я помню",
       "genre": "Драм-н-бейс",
-      "src": "/radio/tracks/021-a4e933ed053a.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/021.mp3",
       "durationMs": 150000,
-      "bytes": 3001068,
-      "sha256": "a4e933ed053a8f74672cd815c7e484e3372c7b538607aa8dcd6d607566a0caa2"
+      "bytes": 3601236,
+      "sha256": "6958273aeb950a50da66e3e1ac33bcdf74a342ca14f2e3d10160be8d03be93bd"
     },
     {
-      "id": "022",
+      "id": "xl-022",
       "title": "Серийный номер сердца",
       "genre": "Прогрессивный рок",
-      "src": "/radio/tracks/022-0ebe0c949491.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/022.mp3",
       "durationMs": 165000,
-      "bytes": 3301081,
-      "sha256": "0ebe0c9494915f92028e8bf35d6f6586fd3744d878f36aff636f46978ce3bb91"
+      "bytes": 3961249,
+      "sha256": "47190e487b99ccadca101d32d8f0ad11868c1624f5cc130d9571567ba9bef2d0"
     },
     {
-      "id": "023",
+      "id": "xl-023",
       "title": "Песня грузового лифта",
       "genre": "Готический метал",
-      "src": "/radio/tracks/023-9bc976bdf408.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/023.mp3",
       "durationMs": 180000,
-      "bytes": 3601081,
-      "sha256": "9bc976bdf408f2daec269ddaded88b8bf43ca8a4221c716b6c9f89002d59c81c"
+      "bytes": 4321249,
+      "sha256": "9e669bf9f6ffa5bf0797dcd0c8efdf6b79cf1542d4cc39ad2e40d6644bc0df59"
     },
     {
-      "id": "024",
+      "id": "xl-024",
       "title": "Запрещённая колыбельная",
       "genre": "Военный марш",
-      "src": "/radio/tracks/024-a99460892a2e.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/024.mp3",
       "durationMs": 165000,
-      "bytes": 3301086,
-      "sha256": "a99460892a2e1ee6b83f9ad68301b0e3015dacf279d17d52b1ff4e55a12fa6fd"
+      "bytes": 3961254,
+      "sha256": "3998553a84dda6e781c396c1f4292fb0efbb0d72187b1fb57e55c72458ea1080"
     },
     {
-      "id": "025",
+      "id": "xl-025",
       "title": "Пятый цикл пробуждения",
       "genre": "Пауэр-метал",
-      "src": "/radio/tracks/025-46ad90dbbc1a.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/025.mp3",
       "durationMs": 150000,
-      "bytes": 3001083,
-      "sha256": "46ad90dbbc1a2d17e1da03a4faeaf295bb6b398d40e38db348aafb37141a31e1"
+      "bytes": 3601251,
+      "sha256": "7cc459390a76615a85eaadbc078b9b9fe74dfe76b8403a4ffbf2cd60738fbc00"
     },
     {
-      "id": "026",
+      "id": "xl-026",
       "title": "Свеча на силовой броне",
       "genre": "Космический блюз",
-      "src": "/radio/tracks/026-241415a11ffe.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/026.mp3",
       "durationMs": 150000,
-      "bytes": 3001082,
-      "sha256": "241415a11ffeb59fbfebbc58894c4917ee8977931d57ffc62c2062a1b397786c"
+      "bytes": 3601250,
+      "sha256": "09c13f90bb934dc3395abfeab39aab54ea2c7dc46e09442c0dc8bd33f3df8b2b"
     },
     {
-      "id": "027",
+      "id": "xl-027",
       "title": "Хор пепельных сестёр",
       "genre": "Даркабере",
-      "src": "/radio/tracks/027-37988c823be0.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/027.mp3",
       "durationMs": 165000,
-      "bytes": 3301079,
-      "sha256": "37988c823be0bcb964ec677ecac256a97020cb2c48f9c0134884e01946369215"
+      "bytes": 3961247,
+      "sha256": "02546948919278f0615b63deec32d1f4ceb86fece8c39e133ad1d0e5059f680b"
     },
     {
-      "id": "028",
+      "id": "xl-028",
       "title": "Не гасни, маленький огонь",
       "genre": "Симфонический рок",
-      "src": "/radio/tracks/028-c750e29724f0.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/028.mp3",
       "durationMs": 180000,
-      "bytes": 3601087,
-      "sha256": "c750e29724f05320ee3770427046fa44c320272eaee6b2c93d31f249b6f026dd"
+      "bytes": 4321255,
+      "sha256": "0afb12c873693708e9e1d13c01fa6b9e8f6a9bbb21a72fd187b4817c2cae1e98"
     },
     {
-      "id": "029",
+      "id": "xl-029",
       "title": "Обет у разбитых ворот",
       "genre": "Дум-метал",
-      "src": "/radio/tracks/029-cb56850a6878.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/029.mp3",
       "durationMs": 165000,
-      "bytes": 3301080,
-      "sha256": "cb56850a68785a79acc1776454be53d44dd0a71b5fe826c16b40cbc158a415ee"
+      "bytes": 3961248,
+      "sha256": "82fb66af74d4b6e8ce43ba95210c03d7d970f8f3fd912875589c155373320d76"
     },
     {
-      "id": "030",
+      "id": "xl-030",
       "title": "Пока звучит молитва",
       "genre": "Синтвейв",
-      "src": "/radio/tracks/030-6b49a41e1b7f.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/030.mp3",
       "durationMs": 150000,
-      "bytes": 3001077,
-      "sha256": "6b49a41e1b7fc7359940f043db1cffecd0a4880bfd6c5e1775bce7f08ae56eb3"
+      "bytes": 3601245,
+      "sha256": "57130b0e9ebaca36d77a36ac11d8cc9ee20de1819696813e28c840b5b1a787fa"
     },
     {
-      "id": "031",
+      "id": "xl-031",
       "title": "Солнце нижнего яруса",
       "genre": "Построк-баллада",
-      "src": "/radio/tracks/031-3136fd9262fe.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/031.mp3",
       "durationMs": 150000,
-      "bytes": 3001079,
-      "sha256": "3136fd9262feb01e7c3906eb104ea920bf500ebf3a0d9ac32084c9d40145e457"
+      "bytes": 3601247,
+      "sha256": "3b67b2291b6ab79fc9f64847429b5787188807ba3d2b3d711ce700ea7ea1ad35"
     },
     {
-      "id": "032",
+      "id": "xl-032",
       "title": "Баллада вентиляционных шахт",
       "genre": "Дарквейв",
-      "src": "/radio/tracks/032-b6933cf91bc0.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/032.mp3",
       "durationMs": 165000,
-      "bytes": 3301093,
-      "sha256": "b6933cf91bc056318b3e719bd6f98bc2bf104f0335994d8a016d386e88528820"
+      "bytes": 3961261,
+      "sha256": "b53b1721e75dce2c3a607bb8ed00be4e98248671d8052408578476b1ad870c51"
     },
     {
-      "id": "033",
+      "id": "xl-033",
       "title": "Смена до конца времён",
       "genre": "EBM",
-      "src": "/radio/tracks/033-2586ac2cfec0.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/033.mp3",
       "durationMs": 180000,
-      "bytes": 3601080,
-      "sha256": "2586ac2cfec08be34fb718ab0ad28ebce8662e40fe81c1909b417bd9c6f80318"
+      "bytes": 4321248,
+      "sha256": "392e46191b6af844c2597dc8cc14b25abdb79311d6e1f48672ce9dbb793c5ccd"
     },
     {
-      "id": "034",
+      "id": "xl-034",
       "title": "Двести этажей домой",
       "genre": "Трип-хоп",
-      "src": "/radio/tracks/034-48cca38fb808.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/034.mp3",
       "durationMs": 165000,
-      "bytes": 3301077,
-      "sha256": "48cca38fb8089c4ca5429cc7b0433fe11b212f59838d970c43cc3cdaae3229f1"
+      "bytes": 3961245,
+      "sha256": "086943e9ca31a95b7cc1ca4bcea045c1288ce0af8a76b91963babf8bafa85797"
     },
     {
-      "id": "035",
+      "id": "xl-035",
       "title": "Праздник без неба",
       "genre": "Космический фолк",
-      "src": "/radio/tracks/035-e2761979605d.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/035.mp3",
       "durationMs": 150000,
-      "bytes": 3001073,
-      "sha256": "e2761979605d3ca52ca08c3ea9d7b60434c2e7f00f9f2cf4c8196a860f8f3c57"
+      "bytes": 3601241,
+      "sha256": "0c428d77999dd4c0b05a784383460d0831d1fb300bcab0eae53d73d430a3418e"
     },
     {
-      "id": "036",
+      "id": "xl-036",
       "title": "Капсулы падают в ночь",
       "genre": "Индустриальный метал",
-      "src": "/radio/tracks/036-91ac2a82a3d0.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/036.mp3",
       "durationMs": 150000,
-      "bytes": 3001080,
-      "sha256": "91ac2a82a3d013ba394201eea08e787c5d191cd3b91b20a626482967e189cc15"
+      "bytes": 3601248,
+      "sha256": "50711b8d6d2b693e16e98e6119440aed3a2233432a92c97e6be5dfbbeca37337"
     },
     {
-      "id": "037",
+      "id": "xl-037",
       "title": "Клятва последнего брата",
       "genre": "Соборный хорал",
-      "src": "/radio/tracks/037-c877f047a729.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/037.mp3",
       "durationMs": 165000,
-      "bytes": 3301085,
-      "sha256": "c877f047a729139d84e86a1e0dee97578d6709c602f43db9d177ad08fe5e0d96"
+      "bytes": 3961253,
+      "sha256": "24ade8225e06d9d05ed9887a9e4ea64049b9ba1df0e4c54263b09811e8506f97"
     },
     {
-      "id": "038",
+      "id": "xl-038",
       "title": "За визором рассвет",
       "genre": "Постпанк",
-      "src": "/radio/tracks/038-f93b1812a8fd.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/038.mp3",
       "durationMs": 180000,
-      "bytes": 3601075,
-      "sha256": "f93b1812a8fd44bff85614feb21e174e3dc50a12b79ab5089fc518dea27d21e9"
+      "bytes": 4321243,
+      "sha256": "e421ad52727e4bd0a42b2a29f8518503f8cea568c2e3b609b8f87efff111c00c"
     },
     {
-      "id": "039",
+      "id": "xl-039",
       "title": "Дредноут помнит весну",
       "genre": "Готический вальс",
-      "src": "/radio/tracks/039-84c1e580e790.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/039.mp3",
       "durationMs": 165000,
-      "bytes": 3301081,
-      "sha256": "84c1e580e7903a02fe477cea19c42e4ade0c7f41120727b0fa3bae217fb8717c"
+      "bytes": 3961249,
+      "sha256": "0c69d8969717b85a8d11edc111fdf24ab6e28278ea3d9957ff0a482f2c04782b"
     },
     {
-      "id": "040",
+      "id": "xl-040",
       "title": "Чёрный щит",
       "genre": "Индустриальное техно",
-      "src": "/radio/tracks/040-cbb6b8a0ad76.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/040.mp3",
       "durationMs": 150000,
-      "bytes": 3001060,
-      "sha256": "cbb6b8a0ad767b31442b64259b70845413086d9b0811456ed3e55a504d54e50a"
+      "bytes": 3601228,
+      "sha256": "d16d55671ac09f37f0fc46602496e41ee016234c0bdb264fc56845d9af6fbc71"
     },
     {
-      "id": "041",
+      "id": "xl-041",
       "title": "Патент на бесконечность",
       "genre": "Военный марш",
-      "src": "/radio/tracks/041-ed5bcc3f173d.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/041.mp3",
       "durationMs": 150000,
-      "bytes": 3001085,
-      "sha256": "ed5bcc3f173daf41530b5b8c9eebfce5356b73813dae760b7e0f58c616101301"
+      "bytes": 3601253,
+      "sha256": "ed7e5a4891148b1637e6c3e47951cd2c685287244ef0e98dc463c3154b2c2580"
     },
     {
-      "id": "042",
+      "id": "xl-042",
       "title": "Золото мёртвых орбит",
       "genre": "Пауэр-метал",
-      "src": "/radio/tracks/042-3ea6f6517f8c.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/042.mp3",
       "durationMs": 165000,
-      "bytes": 3301079,
-      "sha256": "3ea6f6517f8c6316b9f54444b7e70902285f23d724026600067f60a32eed4089"
+      "bytes": 3961247,
+      "sha256": "32dd2c8f7e1cff04c5c04f66112a4dfa88784c6190ac73e36e4e6b28b3fe4ff6"
     },
     {
-      "id": "043",
+      "id": "xl-043",
       "title": "Карта ещё не допета",
       "genre": "Драм-н-бейс",
-      "src": "/radio/tracks/043-75b3d2df8556.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/043.mp3",
       "durationMs": 180000,
-      "bytes": 3601076,
-      "sha256": "75b3d2df85560eab9cd26f4b83e7e5aef8ebf15122e0ba81129383fa538a17db"
+      "bytes": 4321244,
+      "sha256": "7894f5bb6f8ff3cb2caf41d5161fd95c15b7048262c5cf84eb51b150286d7cdd"
     },
     {
-      "id": "044",
+      "id": "xl-044",
       "title": "Контрабанда надежды",
       "genre": "Прогрессивный рок",
-      "src": "/radio/tracks/044-d49aa4ec55dd.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/044.mp3",
       "durationMs": 165000,
-      "bytes": 3301078,
-      "sha256": "d49aa4ec55dd7a5e5eaefe599dd29b2a63f76e7bab2a00f109e864e6cdcc7836"
+      "bytes": 3961246,
+      "sha256": "b584f72e1ceb458f38af143ea15aacd8a2403ffd7cca031701dc49d69f9a778b"
     },
     {
-      "id": "045",
+      "id": "xl-045",
       "title": "Таверна у чёрной звезды",
       "genre": "Готический метал",
-      "src": "/radio/tracks/045-ff30bc4d2bde.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/045.mp3",
       "durationMs": 150000,
-      "bytes": 3001084,
-      "sha256": "ff30bc4d2bdef7043f0a35ae1096130b13945df53a5d7eb7b020e9c79e41a828"
+      "bytes": 3601252,
+      "sha256": "ef51b1fab7fa34818550bd925a4a5b7cf90d4ea2260dba3511947560bd76d88a"
     },
     {
-      "id": "046",
+      "id": "xl-046",
       "title": "Письмо без глаз",
       "genre": "Дум-метал",
-      "src": "/radio/tracks/046-d3293ecc8a12.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/046.mp3",
       "durationMs": 150000,
-      "bytes": 3001069,
-      "sha256": "d3293ecc8a1295741086e799d47864e195d77cf786b867ed9f39e1d9be87d30b"
+      "bytes": 3601237,
+      "sha256": "c533fbf8d9b60f6752839f9032a3dc07aa8dd015f74ffe6c6f2b9d383ed8656f"
     },
     {
-      "id": "047",
+      "id": "xl-047",
       "title": "Эхо Астрономикона",
       "genre": "Синтвейв",
-      "src": "/radio/tracks/047-21952e94e24f.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/047.mp3",
       "durationMs": 165000,
-      "bytes": 3301074,
-      "sha256": "21952e94e24ff0a61915430f1316c19d08d70b7d09de9c6c3e0e43b8bdf1adce"
+      "bytes": 3961242,
+      "sha256": "1f9f89850d285d23a27749d4c6a6878b17d7ea1dbc5a6dbf7a0665aba1612cbf"
     },
     {
-      "id": "048",
+      "id": "xl-048",
       "title": "Передай, что я живой",
       "genre": "Космический блюз",
-      "src": "/radio/tracks/048-e23d5804289f.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/048.mp3",
       "durationMs": 180000,
-      "bytes": 3601077,
-      "sha256": "e23d5804289f428222b64803ec845a9412138e91bd1d17aa6979474a84fa9141"
+      "bytes": 4321245,
+      "sha256": "ab9c782d1e14218f3319f79189dbbed54bf42c5b61f6b6f7579911a0ca3977ff"
     },
     {
-      "id": "049",
+      "id": "xl-049",
       "title": "Частота чужой тоски",
       "genre": "Даркабере",
-      "src": "/radio/tracks/049-1bdca615e5a9.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/049.mp3",
       "durationMs": 165000,
-      "bytes": 3301077,
-      "sha256": "1bdca615e5a94bc25518daf56abb8104cfc5e48ec6081598b702daeaa1d915e5"
+      "bytes": 3961245,
+      "sha256": "b8d4e1f069cfbb140dc2d7e5326ece587060e9d85cf37e5c21263c92c6b191d0"
     },
     {
-      "id": "050",
+      "id": "xl-050",
       "title": "Последняя телепатия",
       "genre": "Симфонический рок",
-      "src": "/radio/tracks/050-c086414b1c04.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/050.mp3",
       "durationMs": 150000,
-      "bytes": 3001078,
-      "sha256": "c086414b1c04c93fd396719bb4ecab2e8f304e9238330243db257a4ce9bf1705"
+      "bytes": 3601246,
+      "sha256": "8299e60969e221a885c95fae911efc019c8ffccc12507ceffa76f786ffdc4ee9"
     },
     {
-      "id": "051",
+      "id": "xl-051",
       "title": "Сон зелёного солнца",
       "genre": "Трип-хоп",
-      "src": "/radio/tracks/051-9e52ab65905b.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/051.mp3",
       "durationMs": 150000,
-      "bytes": 3001077,
-      "sha256": "9e52ab65905b68e3d858346253e2db6653e69b51f61245dc6bdde288ed19fd68"
+      "bytes": 3601245,
+      "sha256": "7410163e47560d6041da4852ef59c9264d56a24ac38499d859ad28601700dd1b"
     },
     {
-      "id": "052",
+      "id": "xl-052",
       "title": "Металл тоскует по коже",
       "genre": "Космический фолк",
-      "src": "/radio/tracks/052-a564b4dd2257.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/052.mp3",
       "durationMs": 165000,
-      "bytes": 3301082,
-      "sha256": "a564b4dd22572424570caff6fe8bfd918150172825bad22a7f786eeac256f2ab"
+      "bytes": 3961250,
+      "sha256": "8a72a8daa94303c550fb485efefc32ade4f67f2d4822d4b52981988a175d7087"
     },
     {
-      "id": "053",
+      "id": "xl-053",
       "title": "Гробница слышит шаги",
       "genre": "Построк-баллада",
-      "src": "/radio/tracks/053-819edd3dd6fb.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/053.mp3",
       "durationMs": 180000,
-      "bytes": 3601079,
-      "sha256": "819edd3dd6fbaf4ff6cee3cec0347aa7c7cf70776b7afade98616b35ffce7c9a"
+      "bytes": 4321247,
+      "sha256": "61cbb1c89f1c29f7ccee04067cbe02d8e531175002054eb2967db071c6cd1f1a"
     },
     {
-      "id": "054",
+      "id": "xl-054",
       "title": "Протокол пробуждения",
       "genre": "Дарквейв",
-      "src": "/radio/tracks/054-c282237e7264.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/054.mp3",
       "durationMs": 165000,
-      "bytes": 3301080,
-      "sha256": "c282237e7264fcd0bcfa3a2927dffdb24eaf2fd7f367a37acbede6221696ba8d"
+      "bytes": 3961248,
+      "sha256": "3ced2050bcbebe0fdd4970b79d41fb0a74d9924d7437322bd06cf24c59f381a0"
     },
     {
-      "id": "055",
+      "id": "xl-055",
       "title": "Король без дыхания",
       "genre": "EBM",
-      "src": "/radio/tracks/055-b617ed0b6185.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/055.mp3",
       "durationMs": 150000,
-      "bytes": 3001075,
-      "sha256": "b617ed0b6185e29fee929fc504f20001f1c80515485405df83751421f2e03a03"
+      "bytes": 3601243,
+      "sha256": "7ad48f816a5a0d05a8df8f49688b28f7574c2ca17c88d4d58d32c579ac769aa7"
     },
     {
-      "id": "056",
+      "id": "xl-056",
       "title": "Камень помнит имя",
       "genre": "Готический вальс",
-      "src": "/radio/tracks/056-8d646473d20e.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/056.mp3",
       "durationMs": 150000,
-      "bytes": 3001073,
-      "sha256": "8d646473d20e2e232bbdf01b30896e4df4dc829f8e4d10a576c3449061598d2c"
+      "bytes": 3601241,
+      "sha256": "6899e01feeab79e5cb1bab7bcee702cd9bf39548f643da9693322dfd0b3bd60c"
     },
     {
-      "id": "057",
+      "id": "xl-057",
       "title": "Танец по тонкой нити",
       "genre": "Индустриальное техно",
-      "src": "/radio/tracks/057-eba106792b58.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/057.mp3",
       "durationMs": 165000,
-      "bytes": 3301078,
-      "sha256": "eba106792b586ac5ea787bb2ecf8265a0424b809a22fb304e3aa3f1152e1015e"
+      "bytes": 3961246,
+      "sha256": "444373dbd0b00fb845ed1c814f683e26c483083d288d9b477fc6087a6ab78941"
     },
     {
-      "id": "058",
+      "id": "xl-058",
       "title": "Песня корабля-мира",
       "genre": "Индустриальный метал",
-      "src": "/radio/tracks/058-c2f578e783e6.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/058.mp3",
       "durationMs": 180000,
-      "bytes": 3601075,
-      "sha256": "c2f578e783e6195ca7e9bf07b54a0b20ed17177548485283db2fca2ee3104015"
+      "bytes": 4321243,
+      "sha256": "84fc80ee8df06230b50dd39c60794b87e7eaccf56ab6da6bbff30963545f4184"
     },
     {
-      "id": "059",
+      "id": "xl-059",
       "title": "Паутина без рассвета",
       "genre": "Соборный хорал",
-      "src": "/radio/tracks/059-abec750dadfb.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/059.mp3",
       "durationMs": 165000,
-      "bytes": 3301079,
-      "sha256": "abec750dadfbd58a11200e6bf5ff65dbed85a4445c2e3301e1b2dd4b14ad3507"
+      "bytes": 3961247,
+      "sha256": "f95c792b7407b853e59f3e80dd8bb558ca42962f7aeb89fed1cd877aa7fdc5bc"
     },
     {
-      "id": "060",
+      "id": "xl-060",
       "title": "Тот, кто остался в кристалле",
       "genre": "Постпанк",
-      "src": "/radio/tracks/060-b657b9ad83b8.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/060.mp3",
       "durationMs": 150000,
-      "bytes": 3001092,
-      "sha256": "b657b9ad83b89e942e5e4dedf354938f0b99dfafd788f44d31b3dd79f00c6b11"
+      "bytes": 3601260,
+      "sha256": "677cb0fac2580d2cb4bf63f22cc280163d47b9143aca1f38669e78b6dd8bcbdd"
     },
     {
-      "id": "061",
+      "id": "xl-061",
       "title": "Красный значит быстрее",
       "genre": "Прогрессивный рок",
-      "src": "/radio/tracks/061-233464df0d6d.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/061.mp3",
       "durationMs": 150000,
-      "bytes": 3001083,
-      "sha256": "233464df0d6df25aadd1acdac71300d9db74f538f3a3901e08ff1b94ae094bde"
+      "bytes": 3601251,
+      "sha256": "ae3b166270aa6f3d5cce3d73af3e69acfb280912550e8bf795915689947efa4c"
     },
     {
-      "id": "062",
+      "id": "xl-062",
       "title": "Громче, чем космос",
       "genre": "Готический метал",
-      "src": "/radio/tracks/062-d292dd07ee6e.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/062.mp3",
       "durationMs": 165000,
-      "bytes": 3301074,
-      "sha256": "d292dd07ee6ee02b4d6f1fa887dde2687fbbc4b25ffe7a05578833a228b31957"
+      "bytes": 3961242,
+      "sha256": "62b91f17dbea0ac72f3226487816315cac91ccc0461568bb833e7b26ba597e08"
     },
     {
-      "id": "063",
+      "id": "xl-063",
       "title": "Рокочущий Вааагх",
       "genre": "Военный марш",
-      "src": "/radio/tracks/063-5aa6005ee8b5.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/063.mp3",
       "durationMs": 180000,
-      "bytes": 3601072,
-      "sha256": "5aa6005ee8b57b717ddfe267930f13a0080810eb3e0ae7728497dfa6d56dafff"
+      "bytes": 4321240,
+      "sha256": "e9f1329737fdc44364d8b6aa8ba476e114b35a59bf1d266d4eb51eaa056ce8a8"
     },
     {
-      "id": "064",
+      "id": "xl-064",
       "title": "Железо, дым и удача",
       "genre": "Пауэр-метал",
-      "src": "/radio/tracks/064-40bbd2986834.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/064.mp3",
       "durationMs": 165000,
-      "bytes": 3301075,
-      "sha256": "40bbd2986834e16d1eb42001108acc45c5487f17d1418c56b557e523c44c9056"
+      "bytes": 3961243,
+      "sha256": "4f21b023ba8e3fc1f29e1db5dec3978abfa270c81f81d591c1e2f5b6d5f98eba"
     },
     {
-      "id": "065",
+      "id": "xl-065",
       "title": "Оркестр из ржавых труб",
       "genre": "Драм-н-бейс",
-      "src": "/radio/tracks/065-ef38910acd2e.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/065.mp3",
       "durationMs": 150000,
-      "bytes": 3001082,
-      "sha256": "ef38910acd2ee8b5d1bd4cb2d0a20d6749294ea4e6567a490ed5bc3de7d01655"
+      "bytes": 3601250,
+      "sha256": "0069a4f9f0567cbdc2458eeb124c0b70fec8ef547ae6de7d1e23aac2fecdbb2e"
     },
     {
-      "id": "066",
+      "id": "xl-066",
       "title": "Договор с пустотой",
       "genre": "Даркабере",
-      "src": "/radio/tracks/066-024fc0bc63d3.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/066.mp3",
       "durationMs": 150000,
-      "bytes": 3001075,
-      "sha256": "024fc0bc63d373eb49e8f1155d3f8c9c72f6dc9b983d329e1dcafeb7d0e55242"
+      "bytes": 3601243,
+      "sha256": "471700b70da289abb7c44d251f6549a1eca28cf4bf1d28420fff5b2d9a330262"
     },
     {
-      "id": "067",
+      "id": "xl-067",
       "title": "Колокол восьми дорог",
       "genre": "Симфонический рок",
-      "src": "/radio/tracks/067-782f77ccc5ff.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/067.mp3",
       "durationMs": 165000,
-      "bytes": 3301079,
-      "sha256": "782f77ccc5ff049c0151afdff85d49b5d68459cfe3aea61b1c758c976e2a9054"
+      "bytes": 3961247,
+      "sha256": "f4c3c422696938f1092c477a52857f332c5ec3cdb65a0a475c729b132e93d13f"
     },
     {
-      "id": "068",
+      "id": "xl-068",
       "title": "Маска улыбается первой",
       "genre": "Дум-метал",
-      "src": "/radio/tracks/068-64312ce79247.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/068.mp3",
       "durationMs": 180000,
-      "bytes": 3601083,
-      "sha256": "64312ce79247377ff2a4cfeac72b1beebda5624a9f84407b0be1363564dfbda0"
+      "bytes": 4321251,
+      "sha256": "68935e806fc1dabe73776f41dfeb5368af297b6f549d50051daa16d46c08124a"
     },
     {
-      "id": "069",
+      "id": "xl-069",
       "title": "Не называй меня богом",
       "genre": "Синтвейв",
-      "src": "/radio/tracks/069-5da39f1dceeb.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/069.mp3",
       "durationMs": 165000,
-      "bytes": 3301080,
-      "sha256": "5da39f1dceeb0ff5e9c9623f75a8d084a16b2da21b63920979278e6f4833b102"
+      "bytes": 3961248,
+      "sha256": "ae9ea2d02725fd739a99d72a6db2392a9dee6c97f458a0caf30b4b8ee9cccf13"
     },
     {
-      "id": "070",
+      "id": "xl-070",
       "title": "Цена последнего дара",
       "genre": "Космический блюз",
-      "src": "/radio/tracks/070-96a0c89075b8.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/070.mp3",
       "durationMs": 150000,
-      "bytes": 3001079,
-      "sha256": "96a0c89075b8958f02cfc486a35d8353b47d1abe87580386af801a345cd41489"
+      "bytes": 3601247,
+      "sha256": "32d66cc24c722adab5c824d7e27ee2fc12b71a6fc02f8c80e82d3192b953d032"
     },
     {
-      "id": "071",
+      "id": "xl-071",
       "title": "Печать на чёрном воске",
       "genre": "Дарквейв",
-      "src": "/radio/tracks/071-0101b1b73e07.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/071.mp3",
       "durationMs": 150000,
-      "bytes": 3001082,
-      "sha256": "0101b1b73e07f4521df7cd8f401de9807e8fcca74d28f5e40e741685124f976c"
+      "bytes": 3601250,
+      "sha256": "272d1cb8ec2fd64abea4beef667bd42562c9e66946b2e7bdcf3c40152de29cb6"
     },
     {
-      "id": "072",
+      "id": "xl-072",
       "title": "Сомнение инквизитора",
       "genre": "EBM",
-      "src": "/radio/tracks/072-e23aa8dcb170.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/072.mp3",
       "durationMs": 165000,
-      "bytes": 3301080,
-      "sha256": "e23aa8dcb170918463f822ee22b0df1ff776b748ca273e583b34274f25ca1976"
+      "bytes": 3961248,
+      "sha256": "635ceca013c8a094cdb22f4f7a95656244dbdb8c461123be33fc7c0e0260af13"
     },
     {
-      "id": "073",
+      "id": "xl-073",
       "title": "Вопрос без права на ответ",
       "genre": "Трип-хоп",
-      "src": "/radio/tracks/073-2e99cceef426.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/073.mp3",
       "durationMs": 180000,
-      "bytes": 3601087,
-      "sha256": "2e99cceef426f20d3487ad1a7d5660d0737e41708110339a8452d0b0f569572d"
+      "bytes": 4321255,
+      "sha256": "1fa4a39e8c837922175308a64e37817cb779868c480cf63c188fcd6d91199752"
     },
     {
-      "id": "074",
+      "id": "xl-074",
       "title": "Список тех, кто не вернулся",
       "genre": "Космический фолк",
-      "src": "/radio/tracks/074-f7c6aa6c2514.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/074.mp3",
       "durationMs": 165000,
-      "bytes": 3301090,
-      "sha256": "f7c6aa6c2514a432a1be4038657003980b27b29689163d7510226c991923ab43"
+      "bytes": 3961258,
+      "sha256": "b8361b0eb1b045e499a6dcd317ba8f4d017c8e17924285a442c9f2212f404780"
     },
     {
-      "id": "075",
+      "id": "xl-075",
       "title": "До рассвета не суди",
       "genre": "Построк-баллада",
-      "src": "/radio/tracks/075-ba855c9d787a.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/075.mp3",
       "durationMs": 150000,
-      "bytes": 3001076,
-      "sha256": "ba855c9d787a69081c8c85442a6e2fc62bb205a62977514d78f513728a1eb0f0"
+      "bytes": 3601244,
+      "sha256": "89382d7e158845df96072a7338596d48cda8f08e6b1ed515b4c59cf483d085d0"
     },
     {
-      "id": "076",
+      "id": "xl-076",
       "title": "Утро цвета расплава",
       "genre": "Соборный хорал",
-      "src": "/radio/tracks/076-a495736fef38.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/076.mp3",
       "durationMs": 150000,
-      "bytes": 3001077,
-      "sha256": "a495736fef38dcd5e84d9c2373ad18824f99694cafc3625b2de13ed38d35bc17"
+      "bytes": 3601245,
+      "sha256": "8426959443141e4c4b7f8c0ec4860ba3d9d4bfd98df4f5baa145bacd4b887b96"
     },
     {
-      "id": "077",
+      "id": "xl-077",
       "title": "Дети мира-кузницы",
       "genre": "Постпанк",
-      "src": "/radio/tracks/077-81990301a874.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/077.mp3",
       "durationMs": 165000,
-      "bytes": 3301073,
-      "sha256": "81990301a8742a4660967456527b88fd2ccce5b6b3f8f823157ae3da5b35d508"
+      "bytes": 3961241,
+      "sha256": "ab890729694487fb5cc8b1b1e30e0f595f37973f7d50897fe6236082d21e0588"
     },
     {
-      "id": "078",
+      "id": "xl-078",
       "title": "Дым над Марсом",
       "genre": "Готический вальс",
-      "src": "/radio/tracks/078-cac10145bd21.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/078.mp3",
       "durationMs": 180000,
-      "bytes": 3601067,
-      "sha256": "cac10145bd2139dab245fe97f1d1ffc29b87135788d4cb420b96b06df3034044"
+      "bytes": 4321235,
+      "sha256": "6af7302c540e6fda22c4775f9f18ab5b5bd350c34afc906f0d66c5eb75c2d39e"
     },
     {
-      "id": "079",
+      "id": "xl-079",
       "title": "Стук молота вместо часов",
       "genre": "Индустриальное техно",
-      "src": "/radio/tracks/079-a42ed2fc9b57.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/079.mp3",
       "durationMs": 165000,
-      "bytes": 3301086,
-      "sha256": "a42ed2fc9b57c9ca2bae7bb0e42a9de61f2dc9fcd6427ace2403e0e43b594eef"
+      "bytes": 3961254,
+      "sha256": "dd7326acc622346f7eff1aa18cdc5077a4b51a771ee27763c1273410dd7a6d63"
     },
     {
-      "id": "080",
+      "id": "xl-080",
       "title": "Рабочий гимн закату",
       "genre": "Индустриальный метал",
-      "src": "/radio/tracks/080-62dcb9da9942.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/080.mp3",
       "durationMs": 150000,
-      "bytes": 3001077,
-      "sha256": "62dcb9da9942639e472df074f9e9862c14fd1f6c7da3176e7b1e94a2f336f768"
+      "bytes": 3601245,
+      "sha256": "a846b5c8821d9bf71a4d3db178b8f29a4bce92e20c47af1befbe4abc48b6c351"
     },
     {
-      "id": "081",
+      "id": "xl-081",
       "title": "Рождённые между звёзд",
       "genre": "Пауэр-метал",
-      "src": "/radio/tracks/081-f56f2ef8fc83.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/081.mp3",
       "durationMs": 150000,
-      "bytes": 3001081,
-      "sha256": "f56f2ef8fc835ee6a80472bd3875ef256aca6fea134319fb4706a81aefcaea0f"
+      "bytes": 3601249,
+      "sha256": "db5c5274dc8f53f65a553b8cd9227c5225d0b114f118a8c65ce7aa713d63800f"
     },
     {
-      "id": "082",
+      "id": "xl-082",
       "title": "Сад под бронестеклом",
       "genre": "Драм-н-бейс",
-      "src": "/radio/tracks/082-6451f196746b.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/082.mp3",
       "durationMs": 165000,
-      "bytes": 3301079,
-      "sha256": "6451f196746b239ce9288cfc3bde125896f25f16ae900f625c745d097698e991"
+      "bytes": 3961247,
+      "sha256": "e7df0114c85157ffe5dc5578bd04a6a61b0dd28dd8f43275d5ef72c7eac5c28c"
     },
     {
-      "id": "083",
+      "id": "xl-083",
       "title": "Гравитация дома",
       "genre": "Прогрессивный рок",
-      "src": "/radio/tracks/083-153a2a2e3c2e.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/083.mp3",
       "durationMs": 180000,
-      "bytes": 3601070,
-      "sha256": "153a2a2e3c2eabcfd9db6c9e81c02ba244e01b9e924ac173629ea19923eda77d"
+      "bytes": 4321238,
+      "sha256": "1761ecf7a9747e860c9ac18c3429208375285fbaa7df3c5b363853d44fd86989"
     },
     {
-      "id": "084",
+      "id": "xl-084",
       "title": "Купол искусственного неба",
       "genre": "Готический метал",
-      "src": "/radio/tracks/084-c428d9954b9d.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/084.mp3",
       "durationMs": 165000,
-      "bytes": 3301089,
-      "sha256": "c428d9954b9d1cb149f3f3d46899ba28beccb6a76632bd55c9d034bc8d33cf70"
+      "bytes": 3961257,
+      "sha256": "34c23020651ae5c0b23c6b4cba0fcd7aae20a8263d08e0cf9e426c8c0e26eb00"
     },
     {
-      "id": "085",
+      "id": "xl-085",
       "title": "Вахта сменится любовью",
       "genre": "Военный марш",
-      "src": "/radio/tracks/085-61b65505cff7.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/085.mp3",
       "durationMs": 150000,
-      "bytes": 3001083,
-      "sha256": "61b65505cff7ce58b90dc1d03d106a67fbf45dbeef891f68755c7f5b2b10f241"
+      "bytes": 3601251,
+      "sha256": "c5d0cd3066a319729090728eca8ca48ecaabd25eee831e3907bc1db6b60a4057"
     },
     {
-      "id": "086",
+      "id": "xl-086",
       "title": "Ферма у края империи",
       "genre": "Синтвейв",
-      "src": "/radio/tracks/086-8224838b6f57.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/086.mp3",
       "durationMs": 150000,
-      "bytes": 3001078,
-      "sha256": "8224838b6f57d107f3a234db5971b0703134008a55be501d5c8ab37a462afe8c"
+      "bytes": 3601246,
+      "sha256": "467266f5a524a9749802c9f6c32282c4ded637c04fa86df613e437d1d78b46ec"
     },
     {
-      "id": "087",
+      "id": "xl-087",
       "title": "Небо, которое не защитили",
       "genre": "Космический блюз",
-      "src": "/radio/tracks/087-febd24e380bb.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/087.mp3",
       "durationMs": 165000,
-      "bytes": 3301087,
-      "sha256": "febd24e380bbd5b2f8d8ed1f59b74d6e54ace20eb258605cbf3c1ec5391357ba"
+      "bytes": 3961255,
+      "sha256": "b2ae600c1bf1c6864683ed8c8aa5e0dc380b0f5d14a09594c98e21b1f543ec23"
     },
     {
-      "id": "088",
+      "id": "xl-088",
       "title": "Маяк пограничной станции",
       "genre": "Даркабере",
-      "src": "/radio/tracks/088-6b20e71f1e85.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/088.mp3",
       "durationMs": 180000,
-      "bytes": 3601087,
-      "sha256": "6b20e71f1e85594161e9327fcb9546328cd906b5eaf7c7376bad974aa31c441c"
+      "bytes": 4321255,
+      "sha256": "6d22d5a14f339a41d7c98219b96c3f3672d1484d42ff65cb83138016c678a3b9"
     },
     {
-      "id": "089",
+      "id": "xl-089",
       "title": "Урожай под чужими лунами",
       "genre": "Симфонический рок",
-      "src": "/radio/tracks/089-d422428283e4.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/089.mp3",
       "durationMs": 165000,
-      "bytes": 3301086,
-      "sha256": "d422428283e495aef78588955a55ad495c4cc8fcaae2acb7083b026bb7bc1896"
+      "bytes": 3961254,
+      "sha256": "01d503e34fe9256dfcb102e4e859ad7e3f4da35e6a9ea115c3f92dc9a2843a77"
     },
     {
-      "id": "090",
+      "id": "xl-090",
       "title": "Тихий сектор",
       "genre": "Дум-метал",
-      "src": "/radio/tracks/090-82689d38c981.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/090.mp3",
       "durationMs": 150000,
-      "bytes": 3001064,
-      "sha256": "82689d38c981f032e6da1cfc03271c2a9b0ce578d80e0e1d023d0ede5e7909fa"
+      "bytes": 3601232,
+      "sha256": "3db5ccdc5498249fd276f8fb03732ec5068ec9c12d30ef046a72204d717a989f"
     },
     {
-      "id": "091",
+      "id": "xl-091",
       "title": "Дорога к золотому трону",
       "genre": "Космический фолк",
-      "src": "/radio/tracks/091-741c95d5dc68.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/091.mp3",
       "durationMs": 150000,
-      "bytes": 3001084,
-      "sha256": "741c95d5dc68966fd4322f8143f299823cb2b086fc2077f617da3f0396329a8e"
+      "bytes": 3601252,
+      "sha256": "7bb922840122e27d8fb863e903e192268d57e62ae2ba504ddf3360965b61fc5b"
     },
     {
-      "id": "092",
+      "id": "xl-092",
       "title": "Восемь свечей на двоих",
       "genre": "Построк-баллада",
-      "src": "/radio/tracks/092-3137380e4850.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/092.mp3",
       "durationMs": 165000,
-      "bytes": 3301082,
-      "sha256": "3137380e4850fc044f19404dc715cf9fd7b9290802cab594f0672ee4e01f4216"
+      "bytes": 3961250,
+      "sha256": "5f513c678fc2b4cbbae2cc316f4b600d3bddf7fb0de03a4b5132a0f283e97822"
     },
     {
-      "id": "093",
+      "id": "xl-093",
       "title": "Паломник без имени",
       "genre": "Дарквейв",
-      "src": "/radio/tracks/093-d4b8a7e737cc.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/093.mp3",
       "durationMs": 180000,
-      "bytes": 3601075,
-      "sha256": "d4b8a7e737cc3c2af0bc0c546589d471bc89b828d0224e15c9f08cfbcdc7f657"
+      "bytes": 4321243,
+      "sha256": "f6e61f599f9c5749de1e41ce3f6cf77cd5c84cff858dbe3fb27aae373c062bd2"
     },
     {
-      "id": "094",
+      "id": "xl-094",
       "title": "Колокола за миллион миров",
       "genre": "EBM",
-      "src": "/radio/tracks/094-f303505a7216.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/094.mp3",
       "durationMs": 165000,
-      "bytes": 3301088,
-      "sha256": "f303505a721615c87dc28c9a986916d9d862bf08b15415c7c52f6d0f7e485204"
+      "bytes": 3961256,
+      "sha256": "e4e30504f372f3f475fa49c12333ede2dc0bba688109928a50ac58a36dd9eacb"
     },
     {
-      "id": "095",
+      "id": "xl-095",
       "title": "Хлеб, молитва и дорога",
       "genre": "Трип-хоп",
-      "src": "/radio/tracks/095-8410646eb398.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/095.mp3",
       "durationMs": 150000,
-      "bytes": 3001081,
-      "sha256": "8410646eb39805d6b9ef2be503c99ba73cf912bd6fb6f32c3d66518760c8e057"
+      "bytes": 3601249,
+      "sha256": "58d98442e9a6f68ddf7b25398316f9cd0ba0b15c0577fc39b735e87a5532245f"
     },
     {
-      "id": "096",
+      "id": "xl-096",
       "title": "Варп-радио: мы ещё здесь",
       "genre": "Индустриальное техно",
-      "src": "/radio/tracks/096-bd5d650a79b5.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/096.mp3",
       "durationMs": 150000,
-      "bytes": 3001084,
-      "sha256": "bd5d650a79b58eafcb4079f4149d68a1c628f5063fa12f061f71378d0ec67279"
+      "bytes": 3601252,
+      "sha256": "18aa391d5f127f468c815902946b80cd1e708fc38ab3edc3ebb7058499b89dba"
     },
     {
-      "id": "097",
+      "id": "xl-097",
       "title": "Частота сорок тысяч",
       "genre": "Индустриальный метал",
-      "src": "/radio/tracks/097-f6df3fd0d779.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/097.mp3",
       "durationMs": 165000,
-      "bytes": 3301077,
-      "sha256": "f6df3fd0d779877823cc75a057f1d880a8114430250b5462026988384a5330e5"
+      "bytes": 3961245,
+      "sha256": "168a7ff4c27c6d447b77f73187d86ee992782c7c1684fd6b4894c95a0d75976f"
     },
     {
-      "id": "098",
+      "id": "xl-098",
       "title": "Не выключай приёмник",
       "genre": "Соборный хорал",
-      "src": "/radio/tracks/098-4d81a2f595ee.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/098.mp3",
       "durationMs": 180000,
-      "bytes": 3601079,
-      "sha256": "4d81a2f595ee44cebeeaeaf0a16cac69e55e75e44b9f96348527c8fab2ecfdd5"
+      "bytes": 4321247,
+      "sha256": "7b67c5074018e1ac2fc6896a772cc47a7bfe1162f02966ce87ebb06107aa9900"
     },
     {
-      "id": "099",
+      "id": "xl-099",
       "title": "Песня переживёт сигнал",
       "genre": "Постпанк",
-      "src": "/radio/tracks/099-9a5fd8f49e3a.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/099.mp3",
       "durationMs": 165000,
-      "bytes": 3301083,
-      "sha256": "9a5fd8f49e3afbcd32d4aada2c8463077334de3e24d848fc4e34c89d79f7481a"
+      "bytes": 3961251,
+      "sha256": "a9b08c3ca804b21936eba6b5e79460d8308be2a36fe139521d509f34b013989d"
     },
     {
-      "id": "100",
+      "id": "xl-100",
       "title": "До следующей звезды",
       "genre": "Готический вальс",
-      "src": "/radio/tracks/100-c58dc164706f.mp3",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/100.mp3",
       "durationMs": 150000,
-      "bytes": 3001077,
-      "sha256": "c58dc164706f5f461e27ba690657a7b8501ed5b409641b82a9b4a361285146f6"
+      "bytes": 3601245,
+      "sha256": "ffe2678076be6fa5ceafaa525b9cc1bcb93dd7da5bc75d33b1c2b252162433af"
     },
     {
-      "id": "p001",
-      "title": "Пока горит маяк",
-      "genre": "Готический метал",
-      "src": "/radio/tracks/p001-5f6d7a6abb7d.mp3",
-      "durationMs": 150000,
-      "bytes": 3001069,
-      "sha256": "5f6d7a6abb7db8e83fcf2ffc80bbc2868753019d2132351255ffa86f0764d4cc"
-    },
-    {
-      "id": "p002",
-      "title": "Железный псалом",
-      "genre": "Индустриальный гимн",
-      "src": "/radio/tracks/p002-7603e62c7809.mp3",
-      "durationMs": 150000,
-      "bytes": 3001070,
-      "sha256": "7603e62c7809a3942077c7d1e15508b659f9ec6769db8727905f57b05099f75e"
-    },
-    {
-      "id": "p003",
-      "title": "Письмо с края звёзд",
-      "genre": "Космическая баллада",
-      "src": "/radio/tracks/p003-92f2328aecde.mp3",
+      "id": "xl-101",
+      "title": "Свет на лестнице — мотор из грохота",
+      "genre": "acoustic minor-key ballad with nylon guitar and harmonium",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/101.mp3",
       "durationMs": 165000,
-      "bytes": 3301076,
-      "sha256": "92f2328aecde1cd763cce4d711067745967ebc45611b305590c75aa9ef2df50a"
+      "bytes": 3961274,
+      "sha256": "263793d8a4192259dae65a87a12537ff9e812241e92b79b2e16a531fc5b7f39d"
+    },
+    {
+      "id": "xl-102",
+      "title": "Запасной канал — голоса сирот",
+      "genre": "power metal with twin leads and heroic double-kick",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/102.mp3",
+      "durationMs": 180000,
+      "bytes": 4321264,
+      "sha256": "47dab392a78a5bd59d12688a2a0dd3fcc054de298b7a07087c129abc1d30e01b"
+    },
+    {
+      "id": "xl-103",
+      "title": "Чужая звезда — иней на витражах",
+      "genre": "ambient chamber pop with cello and glass tones",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/103.mp3",
+      "durationMs": 180000,
+      "bytes": 4321267,
+      "sha256": "76c00d7d85c3d04f53cc18ca1b088c7f965b21760c887777e76dba9c47fd613f"
+    },
+    {
+      "id": "xl-104",
+      "title": "Подменная вахта — траншея под луной",
+      "genre": "doom metal with down-tuned bass and distant bells",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/104.mp3",
+      "durationMs": 150000,
+      "bytes": 3601275,
+      "sha256": "ae577000d05ba21faf05bddad70408217c5de595c04c7730fd2867115c9bca20"
+    },
+    {
+      "id": "xl-105",
+      "title": "Свет на лестнице — иней на витражах",
+      "genre": "doom metal with down-tuned bass and distant bells",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/105.mp3",
+      "durationMs": 180000,
+      "bytes": 4321274,
+      "sha256": "574888dd9161c4636bc8f3ada87d72ec1806e9a1b1cc8a574ebcaad5ce0514ff"
+    },
+    {
+      "id": "xl-106",
+      "title": "Седьмой фонарь — хор медных рёбер",
+      "genre": "post-rock with ebow guitars and slowly building percussion",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/106.mp3",
+      "durationMs": 150000,
+      "bytes": 3601271,
+      "sha256": "978f127a9936e8bbef0971b423b2818e7a6ce972b4dec85daa1c1b17bc3541ad"
+    },
+    {
+      "id": "xl-107",
+      "title": "Запасной канал — пепел на оперенье",
+      "genre": "industrial EBM with motor percussion and metallic gated bass",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/107.mp3",
+      "durationMs": 165000,
+      "bytes": 3961273,
+      "sha256": "a01ab047688f83e889bbf2cd427e33d9baa6669d911cec84a17411784745ce7d"
+    },
+    {
+      "id": "xl-108",
+      "title": "Чужая звезда — пепел на оперенье",
+      "genre": "doom metal with down-tuned bass and distant bells",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/108.mp3",
+      "durationMs": 150000,
+      "bytes": 3601269,
+      "sha256": "de4b1d284d28477a97b90c81bbf50fed5582a25201f675c10aded6f9fd53acfa"
+    },
+    {
+      "id": "xl-109",
+      "title": "Два коротких сигнала — сад астропатов",
+      "genre": "gothic metal with pipe organ and layered distorted strings",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/109.mp3",
+      "durationMs": 165000,
+      "bytes": 3961279,
+      "sha256": "06f935d3deb8c143c28746944241cd170fbbdc40944fed574e7949e14c65d5d4"
+    },
+    {
+      "id": "xl-110",
+      "title": "Два коротких сигнала — траншея под луной",
+      "genre": "gothic drum and bass with cathedral pads and chopped acoustic break",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/110.mp3",
+      "durationMs": 165000,
+      "bytes": 3961284,
+      "sha256": "a82f74b9bb1d9503a741860f3d93759aa8cd7a3159cd671240e84c738ce6f7ab"
+    },
+    {
+      "id": "xl-111",
+      "title": "Снег на плече — память трона",
+      "genre": "dark synthwave with arpeggios and analog toms",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/111.mp3",
+      "durationMs": 180000,
+      "bytes": 4321261,
+      "sha256": "c242fcd88d1a5425f5bb7acca357b566cdee885599314d36db97d5f1d64c5e51"
+    },
+    {
+      "id": "xl-112",
+      "title": "Чужая звезда — карта за пределами",
+      "genre": "electroacoustic chanson with solo accordion and string trio",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/112.mp3",
+      "durationMs": 180000,
+      "bytes": 4321271,
+      "sha256": "e0df0478a7725893e2f2e7b534338e9e859e2222cd8162efe7d582e9e8715398"
+    },
+    {
+      "id": "xl-113",
+      "title": "Просроченный отпуск — хор медных рёбер",
+      "genre": "gothic drum and bass with cathedral pads and chopped acoustic break",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/113.mp3",
+      "durationMs": 180000,
+      "bytes": 4321281,
+      "sha256": "bb079f1f26cdbc95a314abfb57c63612a6a828e56a2fbd0525b43a3db259742b"
+    },
+    {
+      "id": "xl-114",
+      "title": "Просроченный отпуск — память трона",
+      "genre": "military folk ballad with accordion and snare",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/114.mp3",
+      "durationMs": 180000,
+      "bytes": 4321274,
+      "sha256": "17e394327b78925661d12a58e8761a19179ff996a12c1685047a2c9a86d4a6dd"
+    },
+    {
+      "id": "xl-115",
+      "title": "Краденый час — мотор из грохота",
+      "genre": "gothic metal with pipe organ and layered distorted strings",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/115.mp3",
+      "durationMs": 150000,
+      "bytes": 3601267,
+      "sha256": "7248092aa2d87b48061da8cf24e922aa3de6301546166eb9ce1ed331fb233266"
+    },
+    {
+      "id": "xl-116",
+      "title": "Молоко у порога — зелёный саркофаг",
+      "genre": "chamber waltz with violin quartet and piano",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/116.mp3",
+      "durationMs": 150000,
+      "bytes": 3601273,
+      "sha256": "d30334ba5e4e13360fcb4c9ff9b99316adbf43ff403611c6cf10ac7214685034"
+    },
+    {
+      "id": "xl-117",
+      "title": "Седьмой фонарь — забрала погашены",
+      "genre": "dirty blues-rock with slide guitar and resonator",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/117.mp3",
+      "durationMs": 165000,
+      "bytes": 3961272,
+      "sha256": "dd499425c01d8e70238736fe96def99a2676e45dfbb205d36367e6196f5d63ed"
+    },
+    {
+      "id": "xl-118",
+      "title": "Свет на лестнице — голоса сирот",
+      "genre": "chamber waltz with violin quartet and piano",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/118.mp3",
+      "durationMs": 165000,
+      "bytes": 3961267,
+      "sha256": "9836d3804adde2be54e9d5276dcf88a4d110af80de722b7e86e00d0355a0194b"
+    },
+    {
+      "id": "xl-119",
+      "title": "Последний напев — камень памяти",
+      "genre": "alt rock with foggy reverb and tambourine",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/119.mp3",
+      "durationMs": 150000,
+      "bytes": 3601268,
+      "sha256": "793697e33a25c0d077a7edd55e07f09e7181a351de49b9f08d94b24b4a7e0a92"
+    },
+    {
+      "id": "xl-120",
+      "title": "Снег на плече — воск на броне",
+      "genre": "post-rock with ebow guitars and slowly building percussion",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/120.mp3",
+      "durationMs": 150000,
+      "bytes": 3601262,
+      "sha256": "fa9e0a6c3a7a3351518fa4b684fa486ef37a1ef96a38cf50885c3e1c38518b0b"
+    },
+    {
+      "id": "xl-121",
+      "title": "Снег на плече — мотор из грохота",
+      "genre": "cinematic breakbeat with granular pads and rhythm guitar",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/121.mp3",
+      "durationMs": 150000,
+      "bytes": 3601268,
+      "sha256": "4a783db87289e15e529f31223f17a0a6c695bd07014c22e13471c2f21ffe213b"
+    },
+    {
+      "id": "xl-122",
+      "title": "Молоко у порога — пепел на оперенье",
+      "genre": "military folk ballad with accordion and snare",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/122.mp3",
+      "durationMs": 165000,
+      "bytes": 3961274,
+      "sha256": "07762ce9424639c0f634dc719946f8c304af0ec40b1112df8f5bdee6649c375b"
+    },
+    {
+      "id": "xl-123",
+      "title": "Подменная вахта — сад астропатов",
+      "genre": "sludge rock with asymmetric grooves and organ tones",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/123.mp3",
+      "durationMs": 150000,
+      "bytes": 3601270,
+      "sha256": "68b11b65ea8a971164dd4e77500ab7f9f4662396ed7e8013b166b1fc9e67d68c"
+    },
+    {
+      "id": "xl-124",
+      "title": "Чужая звезда — низкие этажи",
+      "genre": "dark synthwave with arpeggios and analog toms",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/124.mp3",
+      "durationMs": 150000,
+      "bytes": 3601260,
+      "sha256": "18ca99cc0647c66e1cb0d59a55cc217bbfcff9260be01b8f5249376632e911b9"
+    },
+    {
+      "id": "xl-125",
+      "title": "Письмо без числа — воск на броне",
+      "genre": "jazz noir with muted trumpet and brushed drums",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/125.mp3",
+      "durationMs": 150000,
+      "bytes": 3601268,
+      "sha256": "d890baffb32bb16e129e6614e5ef7f21ae03f306336f66543c1c32f99ac35074"
+    },
+    {
+      "id": "xl-126",
+      "title": "Потерянный груз — забрала погашены",
+      "genre": "jazz noir with muted trumpet and brushed drums",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/126.mp3",
+      "durationMs": 165000,
+      "bytes": 3961274,
+      "sha256": "8b8757ddc6ee40ba4bccd866aa5dd4f14f865aedeeed590303d60057b0a76631"
+    },
+    {
+      "id": "xl-127",
+      "title": "Молоко у порога — бережёный горн",
+      "genre": "electroacoustic chanson with solo accordion and string trio",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/127.mp3",
+      "durationMs": 150000,
+      "bytes": 3601269,
+      "sha256": "f62e0135c0b997ccf37537b77b5e46f3bdeddcfce25d09bec56bc7510765d51d"
+    },
+    {
+      "id": "xl-128",
+      "title": "Без обратной связи — сад астропатов",
+      "genre": "hard techno with mechanical percussion and low choir",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/128.mp3",
+      "durationMs": 165000,
+      "bytes": 3961275,
+      "sha256": "b4109770ad966a634597c8fc6329cc2acc7f37f667e80c151428340424117aff"
+    },
+    {
+      "id": "xl-129",
+      "title": "Место у окна — сад астропатов",
+      "genre": "progressive rock with Hammond organ and changing textures",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/129.mp3",
+      "durationMs": 150000,
+      "bytes": 3601263,
+      "sha256": "4fcee1c64a277c9b8f02236bbb82bcfd9300fb4bfeee82bbbaeb722bb71fe0d7"
+    },
+    {
+      "id": "xl-130",
+      "title": "Краденый час — голоса сирот",
+      "genre": "cinematic folk with bowed lyre and frame drum",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/130.mp3",
+      "durationMs": 150000,
+      "bytes": 3601260,
+      "sha256": "c0258b582b3898a4c4c398b7437b9518f2a736ffd81a32328676ca654d4fca2a"
     }
   ]
 }

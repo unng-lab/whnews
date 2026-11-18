@@ -1,7 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { readFileSync, statSync } from 'node:fs';
-import { createHash } from 'node:crypto';
+import { readdirSync, readFileSync } from 'node:fs';
 import { createRadioSchedule, radioAudioUrl, radioTime } from '../utils/radio-schedule.mjs';
 import { createRadioPlayer } from '../utils/radio-player.mjs';
 
@@ -132,18 +131,20 @@ test('a precise UTC boundary timer starts the next track and Stop cancels it', (
   player.stop(); assert.equal(timers.size, 0); player.dispose();
 });
 
-test('published edition has 103 unique real MP3s with matching sizes and hashes', () => {
+test('published music points to ordered S3 objects and retains the old MP3 files', () => {
   const manifest = JSON.parse(readFileSync(new URL('../content/radio.json', import.meta.url), 'utf8'));
   const schedule = createRadioSchedule(manifest);
-  assert.equal(schedule.tracks.length, 103);
-  const hashes = new Set(); let bytes = 0;
-  for (const track of schedule.tracks) {
-    const path = new URL(`../public${track.src}`, import.meta.url);
-    assert.equal(statSync(path).size, track.bytes);
-    const sha = createHash('sha256').update(readFileSync(path)).digest('hex');
-    assert.equal(sha, track.sha256); hashes.add(sha); bytes += track.bytes;
+  assert.equal(schedule.tracks.length, 130);
+  for (const [index, track] of manifest.tracks.entries()) {
+    const number = String(index + 1).padStart(3, '0');
+    assert.equal(track.id, `xl-${number}`);
+    assert.equal(track.src, `https://whnews-radio.s3.cloud.ru/radio/xl-v1/${number}.mp3`);
+    assert.match(track.sha256, /^[a-f0-9]{64}$/);
+    assert.ok(Number.isSafeInteger(track.bytes) && track.bytes > 0);
   }
-  assert.equal(hashes.size, 103); assert.ok(bytes < 400 * 1024 * 1024);
+  assert.equal(new Set(manifest.tracks.map(track => track.sha256)).size, 130);
+  const oldAudio = readdirSync(new URL('../public/radio/tracks/', import.meta.url));
+  assert.equal(oldAudio.filter(file => file.endsWith('.mp3')).length, 103);
 });
 
 test('only the station S3 prefix is accepted for remote music', () => {
