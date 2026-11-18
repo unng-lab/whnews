@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "stationId": "whnews-warp-2026-11-xl-v1-160",
+  "stationId": "whnews-warp-2026-11-xl-v1-180",
   "epochUtc": "2026-11-17T00:00:00Z",
   "shuffleSeed": "whnews-warp-2026-11-xl-v1",
   "tracks": [
@@ -1443,7 +1443,187 @@
       "durationMs": 150000,
       "bytes": 3601266,
       "sha256": "3195b614e24e35cffbf38f5f3e9e08ed15d146cd924c28e8ba4dd175d06641bf"
+    },
+    {
+      "id": "xl-161",
+      "title": "Краденый час — стекло обсерватории",
+      "genre": "acoustic minor-key ballad with nylon guitar and harmonium",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/161.mp3",
+      "durationMs": 180000,
+      "bytes": 4321274,
+      "sha256": "c979e5f9388abcac5564acfab1f9f86ff44cf83e5ee1d496d14e25d98dcd1202"
+    },
+    {
+      "id": "xl-162",
+      "title": "Дальний причал — сад астропатов",
+      "genre": "chamber waltz with violin quartet and piano",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/162.mp3",
+      "durationMs": 180000,
+      "bytes": 4321268,
+      "sha256": "d0296ef5343f2af2281b29bbe14fa509e7d06034b1bae9444148f7c3aa2fb742"
+    },
+    {
+      "id": "xl-163",
+      "title": "Два коротких сигнала — бережёный горн",
+      "genre": "progressive rock with Hammond organ and changing textures",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/163.mp3",
+      "durationMs": 165000,
+      "bytes": 3961279,
+      "sha256": "e2e02038d86e54e5bd855c7acdeb5a0b9c99f8507dd3903177a92575d615ee15"
+    },
+    {
+      "id": "xl-164",
+      "title": "Старый ключ — синий след геллера",
+      "genre": "cinematic breakbeat with granular pads and rhythm guitar",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/164.mp3",
+      "durationMs": 180000,
+      "bytes": 4321269,
+      "sha256": "244050474480c3510c7c3d79cd8a675bf6da8d9c9e30f125e7e17c782bc578dd"
+    },
+    {
+      "id": "xl-165",
+      "title": "Просроченный отпуск — стекло обсерватории",
+      "genre": "progressive rock with Hammond organ and changing textures",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/165.mp3",
+      "durationMs": 180000,
+      "bytes": 4321288,
+      "sha256": "079f879750981fc5f87538035a6b0e85ccd6363d71110ef1bb40f83a33e24e1b"
+    },
+    {
+      "id": "xl-166",
+      "title": "Личный жетон — бережёный горн",
+      "genre": "slow trip-hop with live upright bass and dusty breakbeats",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/166.mp3",
+      "durationMs": 165000,
+      "bytes": 3961264,
+      "sha256": "93c8429572598c39295c0a549ad135be43c7f33c41cfc06873e9f226c3b11625"
+    },
+    {
+      "id": "xl-167",
+      "title": "Второе имя — синий след геллера",
+      "genre": "gothic metal with pipe organ and layered distorted strings",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/167.mp3",
+      "durationMs": 180000,
+      "bytes": 4321267,
+      "sha256": "6fe485860b18c1d9e52a3cb24aaba99dbe2b4294e3110b1f45aebf25b8efa90f"
+    },
+    {
+      "id": "xl-168",
+      "title": "Дальний причал — забрала погашены",
+      "genre": "post-rock with ebow guitars and slowly building percussion",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/168.mp3",
+      "durationMs": 165000,
+      "bytes": 3961272,
+      "sha256": "50fcb4cfc05c7381296e9f1e727b6843a38e54c8faf0fa7a9dceb3af2e081c69"
+    },
+    {
+      "id": "xl-169",
+      "title": "Дальний причал — бережёный горн",
+      "genre": "power metal with twin leads and heroic double-kick",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/169.mp3",
+      "durationMs": 180000,
+      "bytes": 4321268,
+      "sha256": "cc630b0275de5a6d6ec06acfcae9371ea410d790669151a55c3c22129add9980"
+    },
+    {
+      "id": "xl-170",
+      "title": "Снег на плече — хор медных рёбер",
+      "genre": "military folk ballad with accordion and snare",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/170.mp3",
+      "durationMs": 180000,
+      "bytes": 4321268,
+      "sha256": "c41e006c3dda698bc8a8cae6ff62407a331f71f4259ea6ba75f36b07e23e4449"
+    },
+    {
+      "id": "xl-171",
+      "title": "Седьмой фонарь — гудок тяжёлых кранов",
+      "genre": "bluegrass-in-space with dulcimer, brushed snare and plucked bass",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/171.mp3",
+      "durationMs": 165000,
+      "bytes": 3961279,
+      "sha256": "68a851a85851b06df885d32e25cd704aa35741b8bb2eb966771bc9b9a1e70d4b"
+    },
+    {
+      "id": "xl-172",
+      "title": "Седьмой фонарь — зёрна на ладонях",
+      "genre": "gothic metal with pipe organ and layered distorted strings",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/172.mp3",
+      "durationMs": 150000,
+      "bytes": 3601271,
+      "sha256": "33a7b2ac7e03f50850777200cab6d5c877b6fe4393b794dea720c5e75e94c37e"
+    },
+    {
+      "id": "xl-173",
+      "title": "Свет на лестнице — траншея под луной",
+      "genre": "orchestral march with snare and funeral brass",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/173.mp3",
+      "durationMs": 180000,
+      "bytes": 4321276,
+      "sha256": "37d94a07d9b8dabc97b7008c40bd1f6fc8a8326c878e8c11601954c27a49f36f"
+    },
+    {
+      "id": "xl-174",
+      "title": "Краденый час — хор медных рёбер",
+      "genre": "dark synthwave with arpeggios and analog toms",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/174.mp3",
+      "durationMs": 180000,
+      "bytes": 4321267,
+      "sha256": "3effa9ae96d955201675f43eff3693812bdadb1d1980c35bb0ba22b498c2bad9"
+    },
+    {
+      "id": "xl-175",
+      "title": "Родня по слуху — синий след геллера",
+      "genre": "doom metal with down-tuned bass and distant bells",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/175.mp3",
+      "durationMs": 180000,
+      "bytes": 4321274,
+      "sha256": "6c1ab02f0420290eff69a5cfcc08575813b9de23eda9e728c6acac050db070f7"
+    },
+    {
+      "id": "xl-176",
+      "title": "Просроченный отпуск — траншея под луной",
+      "genre": "dark synthwave with arpeggios and analog toms",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/176.mp3",
+      "durationMs": 165000,
+      "bytes": 3961283,
+      "sha256": "78e056178218176125d7563d74bb452ae90dd8a7186aebf751612367ba7c9e2d"
+    },
+    {
+      "id": "xl-177",
+      "title": "Последний напев — сад астропатов",
+      "genre": "gothic drum and bass with cathedral pads and chopped acoustic break",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/177.mp3",
+      "durationMs": 180000,
+      "bytes": 4321270,
+      "sha256": "d0bf66ee616a876083fa63d935b044de6c4e0a5b155f7ef38df29cbad137bc4e"
+    },
+    {
+      "id": "xl-178",
+      "title": "Чужая звезда — память трона",
+      "genre": "sludge rock with asymmetric grooves and organ tones",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/178.mp3",
+      "durationMs": 150000,
+      "bytes": 3601260,
+      "sha256": "a9ec77822a6f452c8bc10c1637cad7ac07e27e8c286f3845fa0df9f8f8eb3548"
+    },
+    {
+      "id": "xl-179",
+      "title": "Последний напев — низкие этажи",
+      "genre": "electroacoustic chanson with solo accordion and string trio",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/179.mp3",
+      "durationMs": 150000,
+      "bytes": 3601266,
+      "sha256": "41f413a3fa40c1b903f2f74f7d7dd10874523ae74ac79668c908a059ff854eb8"
+    },
+    {
+      "id": "xl-180",
+      "title": "Личный жетон — пепел на оперенье",
+      "genre": "post-rock with ebow guitars and slowly building percussion",
+      "src": "https://whnews-radio.s3.cloud.ru/radio/xl-v1/180.mp3",
+      "durationMs": 180000,
+      "bytes": 4321269,
+      "sha256": "95f41d7e060e77a6beaba97b98203104f1ad0ae81db31e3affea7968645bef51"
     }
   ],
-  "programCatalogId": "whnews-warp-2026-11-xl-v1-160"
+  "programCatalogId": "whnews-warp-2026-11-xl-v1-180"
 }
