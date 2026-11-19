@@ -1,1 +1,0 @@
-import{_ as r}from"./CiTEqldw.js";import{_ as c,e,o as t}from"./p2t4-lvw.js";import"./BdImMO32.js";import"./DRrRaTwU.js";const n={};function _(s,a){const o=r;return t(),e(o,{kind:"worlds"})}const d=c(n,[["render",_]]);export{d as default};
