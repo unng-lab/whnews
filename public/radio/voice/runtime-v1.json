@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "sampleRate": 24000,
+  "model": {
+    "src": "/radio/voice/model-715536b6689d.onnx",
+    "sha256": "715536b6689ded51ab1e69ef39d63c41ff4bf2b327dd1ddf0213087a86d81cda",
+    "bytes": 21418714
+  },
+  "config": {
+    "src": "/radio/voice/config-39f1af520ca4.json",
+    "sha256": "39f1af520ca42ae30ecfcb0ae06a8e0cc0519b92e7ba8585d7fcef47e87bc5b8",
+    "bytes": 1452
+  },
+  "ort": {
+    "version": "1.31.1",
+    "baseUrl": "/radio/voice/ort-1.31.1/"
+  },
+  "fallbackSrc": "/radio/interlude-71bcc461774d.mp3"
+}
