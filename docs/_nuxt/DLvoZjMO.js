@@ -1,0 +1,1 @@
+import{_ as e}from"./3VKWJw7i.js";import{f as s,g as n,e as a,i as c,o as i}from"./CZK2iumH.js";import"./DE0WQBCh.js";import"./DutE9Sf8.js";import"./CJJ279ND.js";const g={__name:"index",setup(m){const o=s(),t=n(()=>String(o.params.id));return(p,_)=>{const r=e;return i(),a(r,{id:c(t)},null,8,["id"])}}};export{g as default};

@@ -1,0 +1,1 @@
+import{_ as e}from"./Bb8Jd_3X.js";import{_ as c,e as r,o as t}from"./CZK2iumH.js";import"./DE0WQBCh.js";import"./CJJ279ND.js";const n={};function s(_,a){const o=e;return t(),r(o,{kind:"systems"})}const d=c(n,[["render",s]]);export{d as default};
