@@ -1,1 +1,0 @@
-import{_ as e}from"./CEMXJPmI.js";import{_ as c,e as r,o as t}from"./l4gDcKfY.js";import"./LU2Lun1k.js";import"./D3aZ7mV7.js";const n={};function s(_,a){const o=e;return t(),r(o,{kind:"systems"})}const d=c(n,[["render",s]]);export{d as default};
