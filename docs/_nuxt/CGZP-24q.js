@@ -1,1 +1,0 @@
-import{_ as e}from"./DxgHARby.js";import{_ as c,e as r,o as t}from"./CaM8u-iK.js";import"./CqSib3Ys.js";import"./B0K40jeU.js";const n={};function s(_,a){const o=e;return t(),r(o,{kind:"systems"})}const d=c(n,[["render",s]]);export{d as default};
