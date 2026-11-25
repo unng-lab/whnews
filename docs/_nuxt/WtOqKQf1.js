@@ -1,0 +1,1 @@
+import{_ as s}from"./BVjtWI--.js";import{y as n,c as r,b as _,w as c,z as p,o as m,d as i}from"./H-36oLnD.js";const f={__name:"characters",async setup(l){let t,e;return[t,e]=n(()=>p("/actors/",{})),await t,e(),(u,a)=>{const o=s;return m(),r("p",null,[_(o,{to:"/actors/"},{default:c(()=>a[0]||(a[0]=[i("Перейти к действующим лицам")])),_:1})])}}};export{f as default};
