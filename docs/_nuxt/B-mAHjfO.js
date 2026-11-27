@@ -1,1 +1,0 @@
-import{_ as r}from"./C6H4wh5c.js";import{_ as c,e,o as t}from"./Tap2FDns.js";import"./BhZZY179.js";import"./7szWdhds.js";const n={};function _(s,a){const o=r;return t(),e(o,{kind:"worlds"})}const d=c(n,[["render",_]]);export{d as default};
