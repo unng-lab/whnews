@@ -1,1 +1,0 @@
-import{_ as e}from"./Car_DMqC.js";import{_ as r,e as t,o as c}from"./BJOhBPdW.js";import"./C3VhwwBQ.js";import"./BgdGYgk7.js";import"./rQtPT8JA.js";import"./C8UMp4bK.js";const n={};function _(s,m){const o=e;return c(),t(o,{home:""})}const h=r(n,[["render",_]]);export{h as default};
