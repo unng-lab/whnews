@@ -1,0 +1,1 @@
+import{_ as e}from"./DpPgp-QM.js";import{_ as c,e as r,o as t}from"./DEjAvuXb.js";import"./B4J7_sEV.js";import"./Dczynszu.js";const n={};function s(_,a){const o=e;return t(),r(o,{kind:"systems"})}const d=c(n,[["render",s]]);export{d as default};
