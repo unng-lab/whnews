@@ -1,0 +1,1 @@
+import{_ as e}from"./Cg2toInt.js";import{f as s,g as n,e as a,i as c,o as i}from"./D1b1IVhG.js";import"./DeE0RN-s.js";import"./DvbYK_z7.js";import"./ChE7FxPQ.js";const g={__name:"index",setup(m){const o=s(),t=n(()=>String(o.params.id));return(p,_)=>{const r=e;return i(),a(r,{id:c(t)},null,8,["id"])}}};export{g as default};
