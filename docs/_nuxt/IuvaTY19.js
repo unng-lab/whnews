@@ -1,1 +1,0 @@
-import{_ as e}from"./FPTUT_J2.js";import{f as s,g as n,e as a,i as c,o as i}from"./BRMZCAWe.js";import"./8A1_ZUyj.js";import"./DSasmlCa.js";import"./DEGP0W2_.js";const g={__name:"index",setup(m){const o=s(),t=n(()=>String(o.params.id));return(p,_)=>{const r=e;return i(),a(r,{id:c(t)},null,8,["id"])}}};export{g as default};
